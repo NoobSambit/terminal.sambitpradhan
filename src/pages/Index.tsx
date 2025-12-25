@@ -16,7 +16,7 @@ const Index = () => {
 
       {/* Main layout */}
       <div className="layout-container flex h-full grow flex-col relative z-10 bg-grid-pattern">
-        <TerminalHeader />
+        <TerminalHeader activePage="home" />
 
         <main className="flex-1 justify-center py-8 px-4 md:px-8">
           <div className="mx-auto flex max-w-6xl flex-col gap-16">
