@@ -1,44 +1,102 @@
+import { useState } from "react";
 import ProjectsHeader from "@/components/terminal/ProjectsHeader";
 import ProjectsExplorer from "@/components/terminal/ProjectsExplorer";
 import SystemMonitor from "@/components/terminal/SystemMonitor";
 import ProjectCard from "@/components/terminal/ProjectCard";
 import ProjectsStatusBar from "@/components/terminal/ProjectsStatusBar";
+import ProjectDetailsModal, { ProjectData } from "@/components/terminal/ProjectDetailsModal";
 
 // Hardcoded project data - will be made dynamic later
 const projectsData = [
   {
-    id: "chatbot",
+    id: "PRJ-001",
+    title: "E_COMMERCE.JSX",
+    icon: "shopping_cart",
+    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAg_TFtVZsywJoYPZKJiFZyTnfi7XXcW_i3PMjpeteYdd8fxVUZ0QVTA1ycEGBk_M5IuoWs7mu5d2vboU8XMFwdNTKJFRhEAmR9KFF_NF3JRB2s0YIw6YzMfhF51orX_OnjbGCiAuCxbIERItKCcDNO4BU_iTytMU3gIgRU_krhp2xXTb_Cy93quxHo03JYYmAU0Q1Z9AHaHgeVZVFp3FQKarmajqyW3EMCc1tVW0Pi9ih50NgvMFiaHjhXFkl2b339LHGLMCgDqYeC",
+    imageAlt: "E-commerce Platform",
+    pid: "9921",
+    status: "RUNNING",
+    statusColor: "text-ansi-green animate-pulse",
+    techStack: (
+      <>
+        <span className="text-ansi-magenta">&lt;React</span>{" "}
+        <span className="text-ansi-yellow">Node.js</span>{" "}
+        <span className="text-ansi-cyan">MongoDB</span> /&gt;
+      </>
+    ),
+    description:
+      "A comprehensive e-commerce solution designed with a focus on scalability and security. Features include real-time inventory tracking via WebSockets.",
+    version: "v1.0.4",
+    updated: "2h ago",
+    primaryAction: { label: "Demo", icon: "play_arrow" },
+    // Modal data
+    modalData: {
+      id: "PRJ-001",
+      name: "E-Commerce Platform v1.0",
+      version: "1.0.4",
+      metadata: {
+        role: "Lead Developer",
+        timeline: "3 Months",
+        status: "Active Production",
+      },
+      stack: ["React", "Node.js", "Express", "MongoDB", "Redux"],
+      description: "A comprehensive e-commerce solution designed with a focus on scalability and security. Features include real-time inventory tracking via WebSockets, O-Auth integration for secure user authentication, and a custom-built payment gateway wrapper.",
+      features: [
+        { name: "Auth", status: true },
+        { name: "Payments", status: true, provider: "Stripe" },
+        { name: "Analytics", status: false },
+      ],
+    },
+  },
+  {
+    id: "PRJ-002",
     title: "AI_CHATBOT.EXE",
     icon: "terminal",
     imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuBAtE8ltjyUnAvSU-l1vD8AX-20z8kvdb8pl6J7y0GFQnOctFdRj0IXxNLqejDS8lUX3cD3Qzrh6-v0c5XZy_RwdmqF3Eks0git6ybv7uUHmRGG70gKgqbi8STRSTopsXqj8-HANr1PpotjmdXnuIz5igFW67POntqPqydgt31w_E49SMBvBUkkBcNu6rwiE99dbQtmwi5Kb3A8BjKyY832XDB-FqW1gTm-pF6tP8So3VCPCWB6fXe5E9FZ0ac-DFaz5_ChwCd3Eie0",
     imageAlt: "AI Chatbot Preview",
     pid: "8472",
-    status: "RUNNING",
-    statusColor: "text-ansi-green animate-pulse",
+    status: "COMPILING...",
+    statusColor: "text-ansi-yellow",
     techStack: (
       <>
         <span className="text-ansi-magenta">const</span>{" "}
         <span className="text-ansi-white">stack</span> = [
         <span className="text-ansi-yellow">'Python'</span>,{" "}
-        <span className="text-ansi-yellow">'TensorFlow'</span>,{" "}
-        <span className="text-ansi-yellow">'NLP'</span>];
+        <span className="text-ansi-yellow">'TensorFlow'</span>];
       </>
     ),
     description:
       "An advanced AI chatbot designed to simulate human conversation using natural language processing. Features context awareness and sentiment analysis modules.",
     version: "v2.1.0",
-    updated: "2h ago",
+    updated: "1d ago",
     primaryAction: { label: "Launch", icon: "play_arrow" },
+    modalData: {
+      id: "PRJ-002",
+      name: "AI Chatbot v2.1",
+      version: "2.1.0",
+      metadata: {
+        role: "ML Engineer",
+        timeline: "4 Months",
+        status: "In Development",
+      },
+      stack: ["Python", "TensorFlow", "NLP", "FastAPI", "Redis"],
+      description: "An advanced AI chatbot designed to simulate human conversation using natural language processing. Features context awareness, sentiment analysis modules, and multi-language support.",
+      features: [
+        { name: "NLP Engine", status: true },
+        { name: "Sentiment Analysis", status: true },
+        { name: "Voice Support", status: false },
+      ],
+    },
   },
   {
-    id: "market-watch",
+    id: "PRJ-003",
     title: "MARKET_WATCH.SH",
     icon: "monitoring",
     imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuCn8iU0nlYHjZBN-IWJy7KBxp4zfvbQYMwW5UC0FBCZ87ikGxOBv80qhncUfAvr8eYBGVITx9iimFn326TReOrQfK5_hSIPw3b4oeXM-SNzu7cIAYzwzj_JbjuqgP4NqxshHx6xkKszA8enI6AGAT27_FCGg6xpsvr3hIP1PKwWPQMBwsdbtYl4yOvWSKBck_dpTOoqZcTVjJjWmLmM9oYRxTMcTb_biQ1WXNqvcVuypOQB8ha0X74YrRiNHmZxJPbmNTZ5FoC9hIl_",
     imageAlt: "Crypto Tracker",
     pid: "1024",
-    status: "COMPILING...",
-    statusColor: "text-ansi-yellow",
+    status: "STOPPED",
+    statusColor: "text-ansi-white",
     techStack: (
       <>
         <span className="text-ansi-magenta">import</span> {"{"}{" "}
@@ -50,33 +108,28 @@ const projectsData = [
     description:
       "Real-time cryptocurrency tracking dashboard using WebSockets for live data feeds. Implements custom charting library and low-latency updates.",
     version: "v1.0.4-beta",
-    updated: "1d ago",
-    primaryAction: { label: "Demo", icon: "visibility" },
-  },
-  {
-    id: "store-front",
-    title: "STORE_FRONT.JSX",
-    icon: "shopping_cart",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAg_TFtVZsywJoYPZKJiFZyTnfi7XXcW_i3PMjpeteYdd8fxVUZ0QVTA1ycEGBk_M5IuoWs7mu5d2vboU8XMFwdNTKJFRhEAmR9KFF_NF3JRB2s0YIw6YzMfhF51orX_OnjbGCiAuCxbIERItKCcDNO4BU_iTytMU3gIgRU_krhp2xXTb_Cy93quxHo03JYYmAU0Q1Z9AHaHgeVZVFp3FQKarmajqyW3EMCc1tVW0Pi9ih50NgvMFiaHjhXFkl2b339LHGLMCgDqYeC",
-    imageAlt: "E-commerce Store",
-    pid: "9921",
-    status: "STOPPED",
-    statusColor: "text-ansi-white",
-    techStack: (
-      <>
-        <span className="text-ansi-magenta">&lt;React</span>{" "}
-        <span className="text-ansi-yellow">Tailwind</span>{" "}
-        <span className="text-ansi-cyan">NextJS</span> /&gt;
-      </>
-    ),
-    description:
-      "A full-stack e-commerce platform featuring a custom CMS, Stripe integration, and a responsive design system built with utility-first CSS.",
-    version: "v3.0.0",
     updated: "5d ago",
-    primaryAction: { label: "Visit", icon: "open_in_new" },
+    primaryAction: { label: "Demo", icon: "visibility" },
+    modalData: {
+      id: "PRJ-003",
+      name: "Market Watch Dashboard",
+      version: "1.0.4-beta",
+      metadata: {
+        role: "Full Stack Developer",
+        timeline: "2 Months",
+        status: "Beta Testing",
+      },
+      stack: ["React", "WebSockets", "D3.js", "Node.js", "PostgreSQL"],
+      description: "Real-time cryptocurrency tracking dashboard using WebSockets for live data feeds. Implements custom charting library, low-latency updates, and price alerts.",
+      features: [
+        { name: "Real-time Data", status: true },
+        { name: "Price Alerts", status: true },
+        { name: "Portfolio Tracking", status: false },
+      ],
+    },
   },
   {
-    id: "data-pipeline",
+    id: "PRJ-004",
     title: "DATA_PIPELINE.PY",
     icon: "pie_chart",
     imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
@@ -96,18 +149,44 @@ const projectsData = [
     version: "v0.9.1",
     updated: "1wk ago",
     primaryAction: { label: "Details", icon: "info" },
+    modalData: {
+      id: "PRJ-004",
+      name: "Data Pipeline ETL",
+      version: "0.9.1",
+      metadata: {
+        role: "Data Engineer",
+        timeline: "6 Months",
+        status: "Maintenance",
+      },
+      stack: ["Python", "Pandas", "Apache Airflow", "PostgreSQL", "D3.js"],
+      description: "Automated ETL pipeline for processing large datasets. Includes visualization components built with D3.js, scheduled jobs with Airflow, and backend processing with Python Pandas.",
+      features: [
+        { name: "ETL Processing", status: true },
+        { name: "Scheduling", status: true, provider: "Airflow" },
+        { name: "Real-time Sync", status: false },
+      ],
+    },
   },
 ];
 
 const Projects = () => {
-  const handleFileClick = (fileName: string) => {
-    console.log("File clicked:", fileName);
-    // Will open modal later
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleFileClick = (projectId: string) => {
+    const project = projectsData.find(p => p.id === projectId);
+    if (project) {
+      setSelectedProject(project.modalData);
+      setModalOpen(true);
+    }
   };
 
   const handleProjectClick = (projectId: string) => {
-    console.log("Project clicked:", projectId);
-    // Will open modal later
+    const project = projectsData.find(p => p.id === projectId);
+    if (project) {
+      setSelectedProject(project.modalData);
+      setModalOpen(true);
+    }
   };
 
   return (
@@ -183,6 +262,12 @@ const Projects = () => {
       </main>
 
       <ProjectsStatusBar />
+      
+      <ProjectDetailsModal 
+        open={modalOpen} 
+        onOpenChange={setModalOpen} 
+        project={selectedProject} 
+      />
     </div>
   );
 };
