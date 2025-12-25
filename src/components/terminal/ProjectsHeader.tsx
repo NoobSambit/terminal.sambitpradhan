@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 
 interface ProjectsHeaderProps {
-  activePage?: "home" | "about" | "projects" | "contact";
+  activePage?: "home" | "about" | "skills" | "projects" | "contact";
 }
 
 const ProjectsHeader = ({ activePage = "projects" }: ProjectsHeaderProps) => {
   const tabs = [
     { id: "about", path: "/about", icon: "person", label: "/about_me" },
-    { id: "projects", path: "/projects", icon: "code", label: "/projects" },
+    { id: "skills", path: "/skills", icon: "code", label: "/skills" },
+    { id: "projects", path: "/projects", icon: "folder_open", label: "/projects" },
     { id: "contact", path: "/contact", icon: "mail", label: "/contacts" },
   ];
 
