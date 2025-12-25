@@ -8,7 +8,8 @@ const ContactHeader = ({ activePage = "contact" }: ContactHeaderProps) => {
   const tabs = [
     { id: "home", label: "/home", icon: "folder", path: "/" },
     { id: "about", label: "/about-me", icon: "person", path: "/about" },
-    { id: "projects", label: "/projects", icon: "code", path: "/projects" },
+    { id: "skills", label: "/skills", icon: "code", path: "/skills" },
+    { id: "projects", label: "/projects", icon: "folder_open", path: "/projects" },
     { id: "contact", label: "/contact", icon: "alternate_email", path: "/contact" },
   ];
 

@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
 interface TerminalHeaderProps {
-  activePage?: "home" | "about" | "projects" | "contact";
+  activePage?: "home" | "about" | "skills" | "projects" | "contact";
 }
 
 const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
   const tabs = [
     { id: "about", path: "/about", icon: "person", label: "01_ABOUT_ME.sh" },
-    { id: "projects", path: "/projects", icon: "folder_open", label: "02_PROJECTS" },
-    { id: "contact", path: "/contact", icon: "mail", label: "03_CONTACTS" },
+    { id: "skills", path: "/skills", icon: "code", label: "02_SKILLS.js" },
+    { id: "projects", path: "/projects", icon: "folder_open", label: "03_PROJECTS" },
+    { id: "contact", path: "/contact", icon: "mail", label: "04_CONTACTS" },
   ];
 
   return (
