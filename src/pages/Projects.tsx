@@ -1,9 +1,9 @@
 import { useState } from "react";
-import ProjectsHeader from "@/components/terminal/ProjectsHeader";
+import TerminalHeader from "@/components/terminal/TerminalHeader";
 import ProjectsExplorer from "@/components/terminal/ProjectsExplorer";
 import SystemMonitor from "@/components/terminal/SystemMonitor";
 import ProjectCard from "@/components/terminal/ProjectCard";
-import ProjectsStatusBar from "@/components/terminal/ProjectsStatusBar";
+import StatusBar from "@/components/terminal/StatusBar";
 import ProjectDetailsModal, { ProjectData } from "@/components/terminal/ProjectDetailsModal";
 
 // Hardcoded project data - will be made dynamic later
@@ -190,8 +190,13 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-term-bg text-ansi-gray font-mono flex flex-col selection:bg-ansi-gray selection:text-term-bg">
-      <ProjectsHeader activePage="projects" />
+    <div className="min-h-screen bg-term-bg text-ansi-gray font-mono flex flex-col relative overflow-hidden selection:bg-ansi-gray selection:text-term-bg">
+      {/* CRT Effects */}
+      <div className="pointer-events-none fixed inset-0 z-50 scanline opacity-20"></div>
+      <div className="pointer-events-none fixed inset-0 z-40 crt-flicker"></div>
+
+      <div className="flex-1 flex flex-col p-2 md:p-6">
+        <TerminalHeader activePage="projects" />
 
       <main className="flex-1 flex flex-col md:flex-row max-w-[1600px] w-full mx-auto p-4 md:p-6 gap-6 relative">
         {/* Scanline overlay */}
@@ -261,7 +266,9 @@ const Projects = () => {
         </section>
       </main>
 
-      <ProjectsStatusBar />
+      </div>
+
+      <StatusBar />
       
       <ProjectDetailsModal 
         open={modalOpen} 
