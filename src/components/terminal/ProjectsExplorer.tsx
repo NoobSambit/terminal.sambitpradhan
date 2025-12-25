@@ -5,11 +5,11 @@ interface FileItem {
   color: string;
   expanded?: boolean;
   children?: FileItem[];
-  onClick?: () => void;
+  projectId?: string;
 }
 
 interface ProjectsExplorerProps {
-  onFileClick?: (fileName: string) => void;
+  onFileClick?: (projectId: string) => void;
 }
 
 const ProjectsExplorer = ({ onFileClick }: ProjectsExplorerProps) => {
@@ -30,9 +30,10 @@ const ProjectsExplorer = ({ onFileClick }: ProjectsExplorerProps) => {
           color: "text-ansi-cyan",
           expanded: true,
           children: [
-            { name: "chatbot.js", type: "file", icon: "javascript", color: "text-ansi-magenta" },
-            { name: "dashboard.html", type: "file", icon: "html", color: "text-ansi-cyan" },
-            { name: "finance.css", type: "file", icon: "css", color: "text-ansi-yellow" },
+            { name: "e_commerce.jsx", type: "file", icon: "javascript", color: "text-ansi-magenta", projectId: "PRJ-001" },
+            { name: "ai_chatbot.py", type: "file", icon: "code", color: "text-ansi-cyan", projectId: "PRJ-002" },
+            { name: "market_watch.sh", type: "file", icon: "terminal", color: "text-ansi-green", projectId: "PRJ-003" },
+            { name: "data_pipeline.py", type: "file", icon: "code", color: "text-ansi-yellow", projectId: "PRJ-004" },
           ],
         },
       ],
@@ -70,7 +71,7 @@ const ProjectsExplorer = ({ onFileClick }: ProjectsExplorerProps) => {
         key={item.name}
         className="flex items-center gap-2 text-ansi-gray/60 hover:text-ansi-white cursor-pointer hover:bg-ansi-gray/10 rounded px-1 -ml-1 transition-colors"
         style={{ paddingLeft: `${paddingLeft + 20}px` }}
-        onClick={() => onFileClick?.(item.name)}
+        onClick={() => item.projectId && onFileClick?.(item.projectId)}
       >
         <span className={`material-symbols-outlined text-sm ${item.color}`}>
           {item.icon}
