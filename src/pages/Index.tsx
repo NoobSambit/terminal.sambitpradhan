@@ -15,7 +15,7 @@ const Index = () => {
       <div className="crt-flicker"></div>
 
       {/* Main layout */}
-      <div className="layout-container flex h-full grow flex-col relative z-10 bg-grid-pattern">
+      <div className="layout-container flex h-full grow flex-col relative z-10">
         <TerminalHeader activePage="home" />
 
         <main className="flex-1 justify-center py-8 px-4 md:px-8">
