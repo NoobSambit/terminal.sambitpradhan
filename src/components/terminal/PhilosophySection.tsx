@@ -3,7 +3,7 @@ const PhilosophySection = () => {
     <section>
       {/* Command prompt */}
       <div className="flex items-center gap-2 text-sm mb-4 font-bold">
-        <span className="text-ansi-green">sambit@dev</span>
+        <span className="text-ansi-green">sambit-pradhan@dev</span>
         <span className="text-ansi-white">:</span>
         <span className="text-ansi-blue">~/philosophy</span>
         <span className="text-ansi-white">$</span>

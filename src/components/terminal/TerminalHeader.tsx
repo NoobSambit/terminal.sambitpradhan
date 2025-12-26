@@ -22,9 +22,9 @@ const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
             <div className="flex size-3 items-center justify-center rounded-full bg-ansi-yellow hover:brightness-110 cursor-pointer"></div>
             <div className="flex size-3 items-center justify-center rounded-full bg-ansi-green hover:brightness-110 cursor-pointer"></div>
           </div>
-          <Link to="/" className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">
+          <Link to="/" className="flex items-center gap-1 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">
             <span className="material-symbols-outlined text-[16px] text-ansi-cyan">terminal</span>
-            <span className="text-ansi-magenta">SAMBIT</span>
+            <span className="text-ansi-magenta">SAMBIT-PRADHAN</span>
             <span className="text-ansi-gray">@</span>
             <span className="text-ansi-cyan">PORTFOLIO</span>
             <span className="text-ansi-yellow">:~</span>
@@ -45,12 +45,13 @@ const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
               to={tab.path}
               className={`relative group cursor-pointer flex items-center gap-2 px-6 py-2 rounded-t-lg transition-all ${
                 isActive
-                  ? "bg-term-panel border-t-2 border-ansi-green text-ansi-green z-10"
-                  : "bg-transparent hover:bg-term-panel/50 border-t-2 border-transparent hover:border-term-border text-ansi-gray hover:text-ansi-white"
+                  ? `bg-term-panel border-t-2 z-10 ${tab.color}`
+                  : "bg-transparent hover:bg-term-panel/50 border-t-2 border-transparent hover:border-term-border"
               }`}
+              style={{ borderColor: isActive ? undefined : 'transparent' }}
             >
               <span className={`material-symbols-outlined text-sm ${tab.color}`}>{tab.icon}</span>
-              <span className="text-sm font-bold tracking-wide">{tab.label}</span>
+              <span className={`text-sm font-bold tracking-wide ${isActive ? tab.color : 'text-ansi-gray group-hover:text-ansi-white'}`}>{tab.label}</span>
               {isActive && (
                 <span className="material-symbols-outlined text-xs ml-2 opacity-50 hover:opacity-100">close</span>
               )}
