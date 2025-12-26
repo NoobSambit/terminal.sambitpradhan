@@ -55,7 +55,14 @@ const SkillsExplorer = ({ activeFile, onFileClick }: SkillsExplorerProps) => {
                       : `text-ansi-gray hover:${file.color} hover:bg-term-panel`
                   }`}
                   style={{ borderColor: activeFile === file.id ? 'currentColor' : 'transparent' }}
-                  onClick={() => onFileClick(file.id)}
+                  onClick={() => {
+                    onFileClick(file.id);
+                    // Scroll to the section
+                    const element = document.getElementById(file.id);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
                 >
                   <span className={`material-symbols-outlined text-[16px] ${file.color}`}>{file.icon}</span>
                   <span className={activeFile === file.id ? file.color : 'text-ansi-gray/90 hover:text-ansi-white'}>{file.id}</span>

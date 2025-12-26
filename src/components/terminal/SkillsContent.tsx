@@ -75,7 +75,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
       <div className="flex-1 overflow-y-auto p-6 font-mono text-sm md:text-base leading-relaxed">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Languages Section */}
-          <div className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-yellow/30 transition-colors">
+          <div id="languages.js" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-yellow/30 transition-colors scroll-mt-6">
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-ansi-yellow flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">javascript</span> languages.js
             </div>
@@ -114,7 +114,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
           </div>
 
           {/* Frameworks Section */}
-          <div className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-magenta/30 transition-colors">
+          <div id="frameworks.json" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-magenta/30 transition-colors scroll-mt-6">
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-ansi-magenta flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">data_object</span> frameworks.json
             </div>
@@ -158,7 +158,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
           </div>
 
           {/* Skills Meter Section */}
-          <div className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-ansi-green/30 transition-colors">
+          <div id="skills_meter.tsx" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-ansi-green/30 transition-colors scroll-mt-6">
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-ansi-green flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">speed</span> skills_meter.tsx
             </div>
@@ -239,7 +239,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
           </div>
 
           {/* Certifications Section */}
-          <div className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-ansi-cyan/30 transition-colors">
+          <div id="certs.log" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-ansi-cyan/30 transition-colors scroll-mt-6">
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-ansi-cyan flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">verified</span> certs.log
             </div>
@@ -265,7 +265,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
           </div>
 
           {/* Tools Section */}
-          <div className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-orange-500/30 transition-colors">
+          <div id="tools.sh" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-orange-500/30 transition-colors scroll-mt-6">
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-orange-400 flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">terminal</span> tools.sh
             </div>
