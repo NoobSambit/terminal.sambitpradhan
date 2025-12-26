@@ -161,6 +161,56 @@ const projectsData = [
       repoUrl: "https://github.com/NoobSambit/docbuilder",
     },
   },
+  {
+    id: "PRJ-CAREER-001",
+    title: "CAREER_AI.TSX",
+    icon: "work",
+    imageSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    imageAlt: "AI Career Assistant",
+    pid: "4001",
+    status: "RUNNING",
+    statusColor: "text-ansi-green animate-pulse",
+    techStack: (
+      <>
+        <span className="text-ansi-magenta">&lt;Next.js</span>{" "}
+        <span className="text-ansi-yellow">TypeScript</span>{" "}
+        <span className="text-ansi-cyan">LangChain</span>{" "}
+        <span className="text-ansi-green">Gemini</span> /&gt;
+      </>
+    ),
+    description:
+      "Comprehensive career development platform for resume enhancement, email crafting, and interview prep using LangChain and Google Gemini.",
+    version: "v1.0.0",
+    updated: "Ongoing",
+    primaryAction: { label: "Demo", icon: "play_arrow" },
+    demoUrl: "https://ai-career-assistant-sigma.vercel.app",
+    repoUrl: "https://github.com/NoobSambit/AI-Career-Assistant",
+    modalData: {
+      id: "PRJ-CAREER-001",
+      name: "AI Career Assistant v1.0",
+      version: "1.0.0",
+      metadata: {
+        role: "Full Stack Developer",
+        timeline: "Ongoing",
+        status: "Production Ready",
+      },
+      stack: ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "Shadcn/ui", "LangChain", "Google Gemini API", "Vercel"],
+      description: "AI Career Assistant is a comprehensive career development platform built to help professionals enhance resumes, craft effective emails, and prepare for interviews leveraging advanced AI integration via LangChain and the Google Gemini API. The system provides deep analysis, personalized feedback, and deployable APIs for real-world usage.",
+      features: [
+        { name: "Resume Enhancement", status: true, details: "ATS optimization, skills assessment, structure analysis, and career guidance" },
+        { name: "Email Optimization", status: true, details: "Tone analysis, deliverability checks with alternative suggestions" },
+        { name: "Interview Preparation", status: true, details: "Personalized STAR method coaching with behavioral question practice" },
+        { name: "LangChain AI Orchestration", status: true, details: "Structured pipelines, reusable prompts, and type-safe chains for robust outputs" },
+        { name: "Responsive UI / UX", status: true, details: "Modern dark theme interface with drag-and-drop file uploads and progress indicators" },
+        { name: "API Backend", status: true, details: "REST endpoints for resume, email, and interview analysis" },
+        { name: "Deployment & Monitoring", status: true, details: "Vercel deployment with LangSmith monitoring ready" },
+        { name: "Security & Validation", status: true, details: "Rate limiting, input validation, CORS configuration, and sanitized file processing" },
+        { name: "Roadmap Enhancements", status: false, details: "Future analytics dashboards and extended personalization features" },
+      ],
+      demoUrl: "https://ai-career-assistant-sigma.vercel.app",
+      repoUrl: "https://github.com/NoobSambit/AI-Career-Assistant",
+    },
+  },
 ];
 
 const Projects = () => {
