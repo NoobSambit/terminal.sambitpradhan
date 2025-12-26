@@ -4,8 +4,14 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
-    message: "",
+    subject: "internship_opportunity",
+    message: `Hi Sambit,
+
+I came across your portfolio and was impressed by your work on scalable full-stack systems and AI-powered applications.
+
+We would like to connect regarding a potential opportunity / collaboration. Let us know a good time to discuss further.
+
+Best regards,`,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -53,7 +59,7 @@ const ContactForm = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full bg-term-panel border border-term-border rounded p-2 sm:p-2.5 pl-5 sm:pl-7 text-xs sm:text-sm text-ansi-white font-mono focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-ansi-gray/40"
-                placeholder="guest_user"
+                placeholder="hiring_manager / recruiter / collaborator"
               />
             </div>
           </div>
@@ -70,7 +76,7 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-term-panel border border-term-border rounded p-2 sm:p-2.5 pl-5 sm:pl-7 text-xs sm:text-sm text-ansi-white font-mono focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-ansi-gray/40"
-                placeholder="guest@domain.com"
+                placeholder="your.email@company.com"
               />
             </div>
           </div>
@@ -87,7 +93,7 @@ const ContactForm = () => {
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 className="w-full bg-term-panel border border-term-border rounded p-2 sm:p-2.5 pl-5 sm:pl-7 text-xs sm:text-sm text-ansi-white font-mono focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-ansi-gray/40"
-                placeholder="project_inquiry"
+                placeholder="internship_opportunity / full_time_role / collaboration"
               />
             </div>
           </div>
@@ -138,12 +144,17 @@ const ContactForm = () => {
           </div>
         </form>
 
-        {/* Output Simulation */}
+        {/* Terminal Footer */}
         <div className="mt-auto p-2 sm:p-3 border border-term-border border-dashed rounded bg-term-bg/50">
           <p className="font-mono text-[10px] sm:text-xs text-ansi-gray/60">
-            <span className="text-ansi-green">root@portfolio</span>:
-            <span className="text-ansi-cyan">~/contact</span> ${" "}
-            <span className="inline-block w-1.5 sm:w-2 h-3 sm:h-4 bg-primary animate-pulse align-middle"></span>
+            <span className="text-ansi-yellow">$</span>{" "}
+            <span className="text-ansi-white">contact --status</span>
+          </p>
+          <p className="font-mono text-[10px] sm:text-xs mt-1">
+            <span className="text-ansi-green">ACTIVE</span>
+            <span className="text-ansi-gray/60"> • </span>
+            <span className="text-ansi-cyan">RESPONDS WITHIN 24 HOURS</span>
+            <span className="inline-block w-1.5 sm:w-2 h-3 sm:h-4 bg-primary animate-pulse align-middle ml-2"></span>
           </p>
         </div>
       </div>
