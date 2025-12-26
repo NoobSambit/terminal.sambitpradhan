@@ -3,7 +3,7 @@ const AboutSection = () => {
     <section>
       {/* Command prompt */}
       <div className="flex items-center gap-2 text-sm mb-4 font-bold">
-        <span className="text-ansi-green">user@portfolio</span>
+        <span className="text-ansi-green">sambit@dev</span>
         <span className="text-ansi-white">:</span>
         <span className="text-ansi-blue">~/profile</span>
         <span className="text-ansi-white">$</span>
@@ -34,10 +34,10 @@ const AboutSection = () => {
           </div>
 
           <div className="text-center">
-            <h3 className="text-xl font-bold text-white mb-1">GUEST USER</h3>
-            <p className="text-ansi-magenta text-sm mb-4">@fullstack_dev</p>
+            <h3 className="text-xl font-bold text-white mb-1">SAMBIT PRADHAN</h3>
+            <p className="text-ansi-magenta text-sm mb-4">@fullstack_backend</p>
             <div className="inline-block px-3 py-1 border border-ansi-green/50 text-ansi-green text-xs rounded bg-ansi-green/10">
-              STATUS: ONLINE
+              STATUS: AVAILABLE
             </div>
           </div>
         </div>
@@ -49,30 +49,36 @@ const AboutSection = () => {
               <span className="material-symbols-outlined">fingerprint</span>
               WHOAMI
             </h3>
-            <p className="text-ansi-white/80 leading-relaxed mb-6 font-light text-lg">
-              I am a passionate developer who believes that{" "}
-              <span className="text-ansi-yellow font-medium">code is poetry</span>. I build accessible,
-              pixel-perfect, and performant web experiences. Like a well-optimized algorithm, I believe
-              in efficiency and elegance in design.
+            <p className="text-ansi-white/80 leading-relaxed mb-4 font-light text-lg">
+              I'm a <span className="text-ansi-cyan font-medium">Full Stack Developer</span> with a backend-first mindset 
+              and a strong interest in scalable systems, AI integration, and developer-friendly architectures.
+            </p>
+            <p className="text-ansi-white/70 leading-relaxed mb-4 font-light">
+              I enjoy solving problems that sit at the intersection of data, APIs, and user experience — 
+              whether it's building AI-assisted workflows, real-time dashboards, or location-aware platforms.
+            </p>
+            <p className="text-ansi-white/70 leading-relaxed mb-6 font-light">
+              I value <span className="text-ansi-yellow">clean abstractions</span>, <span className="text-ansi-green">measurable performance</span>, 
+              and systems that are designed to grow beyond their first version.
             </p>
 
             {/* Info grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mt-8">
               <div className="bg-term-bg p-3 border border-term-border rounded flex flex-col">
-                <span className="text-ansi-gray text-xs mb-1">CURRENT_LOCATION</span>
-                <span className="text-ansi-blue font-bold">Cyberspace, Earth Node</span>
+                <span className="text-ansi-gray text-xs mb-1">LOCATION</span>
+                <span className="text-ansi-blue font-bold">India (Remote-friendly)</span>
+              </div>
+              <div className="bg-term-bg p-3 border border-term-border rounded flex flex-col">
+                <span className="text-ansi-gray text-xs mb-1">ROLE</span>
+                <span className="text-ansi-magenta font-bold">Full Stack / Backend-Focused</span>
+              </div>
+              <div className="bg-term-bg p-3 border border-term-border rounded flex flex-col">
+                <span className="text-ansi-gray text-xs mb-1">PRIMARY_STACK</span>
+                <span className="text-ansi-yellow font-bold text-xs">TypeScript · Next.js · Node.js · MongoDB</span>
               </div>
               <div className="bg-term-bg p-3 border border-term-border rounded flex flex-col">
                 <span className="text-ansi-gray text-xs mb-1">AVAILABILITY</span>
-                <span className="text-ansi-green font-bold">Open for Commissions</span>
-              </div>
-              <div className="bg-term-bg p-3 border border-term-border rounded flex flex-col">
-                <span className="text-ansi-gray text-xs mb-1">EXPERIENCE_LEVEL</span>
-                <span className="text-ansi-magenta font-bold">Level 25 (Senior)</span>
-              </div>
-              <div className="bg-term-bg p-3 border border-term-border rounded flex flex-col">
-                <span className="text-ansi-gray text-xs mb-1">MAIN_WEAPON</span>
-                <span className="text-ansi-yellow font-bold">VS Code + Vim Mode</span>
+                <span className="text-ansi-green font-bold">Open to opportunities</span>
               </div>
             </div>
           </div>

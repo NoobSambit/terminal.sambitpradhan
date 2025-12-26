@@ -1,93 +1,73 @@
 const SkillsSection = () => {
+  const skillCategories = [
+    {
+      title: "Frontend",
+      icon: "web",
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      color: "ansi-cyan",
+    },
+    {
+      title: "Backend",
+      icon: "dns",
+      skills: ["Node.js", "Express", "FastAPI", "Firebase", "MongoDB", "SQL"],
+      color: "ansi-green",
+    },
+    {
+      title: "AI / Data",
+      icon: "psychology",
+      skills: ["LangChain", "LLM Integration", "Prompt Engineering", "RAG", "OCR Pipelines"],
+      color: "ansi-magenta",
+    },
+    {
+      title: "Tools",
+      icon: "build",
+      skills: ["Git", "Docker", "Vercel", "Netlify", "Postman", "Cursor", "VS Code"],
+      color: "ansi-yellow",
+    },
+  ];
+
   return (
     <section>
       {/* Command prompt */}
       <div className="flex items-center gap-2 text-sm mb-4 font-bold">
-        <span className="text-ansi-green">user@portfolio</span>
+        <span className="text-ansi-green">sambit@dev</span>
         <span className="text-ansi-white">:</span>
-        <span className="text-ansi-blue">~/stats</span>
+        <span className="text-ansi-blue">~/skills</span>
         <span className="text-ansi-white">$</span>
-        <span className="text-ansi-yellow">node skills.js</span>
+        <span className="text-ansi-yellow">cat stack.json</span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Frontend Stack */}
-        <div className="bg-term-panel border border-term-border p-5 rounded relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-2 opacity-10">
-            <span className="material-symbols-outlined text-[64px]">javascript</span>
-          </div>
-          <h4 className="text-ansi-gray text-xs font-bold mb-4 uppercase tracking-wider border-b border-term-border pb-2">
-            Frontend Stack
-          </h4>
-          <div className="space-y-4">
-            <div>
-              <div className="flex justify-between text-sm mb-1">
-                <span className="text-ansi-cyan">React_NextJS</span>
-                <span className="text-ansi-magenta">95%</span>
-              </div>
-              <div className="h-1.5 w-full bg-term-bg rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-ansi-cyan to-ansi-blue w-[95%]"></div>
-              </div>
-            </div>
-            <div>
-              <div className="flex justify-between text-sm mb-1">
-                <span className="text-ansi-yellow">TypeScript</span>
-                <span className="text-ansi-magenta">90%</span>
-              </div>
-              <div className="h-1.5 w-full bg-term-bg rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-ansi-yellow to-orange-500 w-[90%]"></div>
-              </div>
-            </div>
-            <div>
-              <div className="flex justify-between text-sm mb-1">
-                <span className="text-ansi-green">TailwindCSS</span>
-                <span className="text-ansi-magenta">100%</span>
-              </div>
-              <div className="h-1.5 w-full bg-term-bg rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-ansi-green to-emerald-400 w-full"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Section Title */}
+      <h2 className="text-2xl md:text-3xl font-bold text-ansi-cyan mb-8 flex items-center gap-3">
+        <span className="material-symbols-outlined">terminal</span>
+        Tech Stack Snapshot
+      </h2>
 
-        {/* Backend & Tools */}
-        <div className="bg-term-panel border border-term-border p-5 rounded relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-2 opacity-10">
-            <span className="material-symbols-outlined text-[64px]">dns</span>
-          </div>
-          <h4 className="text-ansi-gray text-xs font-bold mb-4 uppercase tracking-wider border-b border-term-border pb-2">
-            Backend & Tools
-          </h4>
-          <div className="space-y-4">
-            <div>
-              <div className="flex justify-between text-sm mb-1">
-                <span className="text-ansi-red">Node.js</span>
-                <span className="text-ansi-magenta">80%</span>
-              </div>
-              <div className="h-1.5 w-full bg-term-bg rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-ansi-red to-rose-400 w-[80%]"></div>
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skillCategories.map((category) => (
+          <div
+            key={category.title}
+            className="bg-term-panel border border-term-border p-5 rounded relative overflow-hidden hover:border-ansi-gray/50 transition-colors"
+          >
+            <div className="absolute top-0 right-0 p-2 opacity-10">
+              <span className="material-symbols-outlined text-[64px]">{category.icon}</span>
             </div>
-            <div>
-              <div className="flex justify-between text-sm mb-1">
-                <span className="text-white">Docker / DevOps</span>
-                <span className="text-ansi-magenta">75%</span>
-              </div>
-              <div className="h-1.5 w-full bg-term-bg rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-white to-gray-400 w-[75%]"></div>
-              </div>
-            </div>
-            <div>
-              <div className="flex justify-between text-sm mb-1">
-                <span className="text-ansi-magenta">Figma / UI</span>
-                <span className="text-ansi-magenta">85%</span>
-              </div>
-              <div className="h-1.5 w-full bg-term-bg rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-ansi-magenta to-purple-400 w-[85%]"></div>
-              </div>
+            <h4 className={`text-${category.color} text-sm font-bold mb-4 uppercase tracking-wider border-b border-term-border pb-2 flex items-center gap-2`}>
+              <span className="material-symbols-outlined text-[18px]">{category.icon}</span>
+              {category.title}
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className={`bg-${category.color}/10 text-${category.color} border border-${category.color}/30 px-3 py-1.5 rounded text-sm font-medium hover:bg-${category.color}/20 transition-colors cursor-default`}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
