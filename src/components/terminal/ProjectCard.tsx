@@ -14,6 +14,8 @@ interface ProjectCardProps {
     label: string;
     icon: string;
   };
+  demoUrl?: string;
+  repoUrl?: string;
   onClick?: () => void;
 }
 
@@ -30,6 +32,8 @@ const ProjectCard = ({
   version,
   updated,
   primaryAction,
+  demoUrl,
+  repoUrl,
   onClick,
 }: ProjectCardProps) => {
   return (
@@ -92,22 +96,32 @@ const ProjectCard = ({
             <span>Updated: {updated}</span>
           </div>
           <div className="flex gap-2">
-            <button 
-              className="px-3 py-1.5 text-xs font-bold bg-transparent border border-ansi-gray/50 text-ansi-gray hover:bg-ansi-gray hover:text-term-bg transition-colors rounded uppercase tracking-wider flex items-center gap-1"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span className="material-symbols-outlined text-sm">code</span>
-              Source
-            </button>
-            <button 
-              className="px-3 py-1.5 text-xs font-bold bg-ansi-gray text-term-bg hover:bg-ansi-white transition-colors rounded uppercase tracking-wider flex items-center gap-1 shadow-glow"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span className="material-symbols-outlined text-sm">
-                {primaryAction.icon}
-              </span>
-              {primaryAction.label}
-            </button>
+            {repoUrl && (
+              <a 
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1.5 text-xs font-bold bg-transparent border border-ansi-gray/50 text-ansi-gray hover:bg-ansi-gray hover:text-term-bg transition-colors rounded uppercase tracking-wider flex items-center gap-1"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <span className="material-symbols-outlined text-sm">code</span>
+                Source
+              </a>
+            )}
+            {demoUrl && (
+              <a 
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1.5 text-xs font-bold bg-ansi-gray text-term-bg hover:bg-ansi-white transition-colors rounded uppercase tracking-wider flex items-center gap-1 shadow-glow"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <span className="material-symbols-outlined text-sm">
+                  {primaryAction.icon}
+                </span>
+                {primaryAction.label}
+              </a>
+            )}
           </div>
         </div>
       </div>
