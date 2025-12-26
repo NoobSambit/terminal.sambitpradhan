@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SkillsSection = () => {
   const skillCategories = [
     {
@@ -68,6 +70,35 @@ const SkillsSection = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Load More Terminal Link */}
+      <div className="mt-8 sm:mt-12 flex flex-col items-center gap-3">
+        <div className="flex items-center gap-2 text-[10px] sm:text-sm font-mono">
+          <span className="text-ansi-gray">---</span>
+          <span className="text-ansi-cyan">more...</span>
+          <span className="text-ansi-gray">---</span>
+        </div>
+        <Link 
+          to="/skills"
+          className="group flex items-center gap-2 text-xs sm:text-sm font-mono"
+        >
+          <span className="text-ansi-green">$</span>
+          <span className="text-ansi-yellow group-hover:text-ansi-cyan transition-colors">
+            cat ./skills --verbose
+          </span>
+          <span className="text-ansi-gray group-hover:text-ansi-magenta transition-colors animate-pulse">
+            █
+          </span>
+        </Link>
+        <Link
+          to="/skills"
+          className="px-4 sm:px-6 py-2 sm:py-3 border border-ansi-cyan/50 bg-ansi-cyan/10 text-ansi-cyan hover:bg-ansi-cyan hover:text-black font-bold text-xs sm:text-sm transition-all rounded flex items-center gap-2 shadow-[0_0_15px_rgba(139,233,253,0.2)] hover:shadow-[0_0_25px_rgba(139,233,253,0.4)]"
+        >
+          <span className="material-symbols-outlined text-sm sm:text-lg">code</span>
+          EXPLORE FULL STACK
+          <span className="material-symbols-outlined text-sm sm:text-lg">arrow_forward</span>
+        </Link>
       </div>
     </section>
   );

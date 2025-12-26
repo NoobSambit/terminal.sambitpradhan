@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ProjectsSection = () => {
   return (
     <section id="projects">
@@ -258,6 +260,35 @@ const ProjectsSection = () => {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Load More Terminal Link */}
+        <div className="mt-8 sm:mt-12 flex flex-col items-center gap-3">
+          <div className="flex items-center gap-2 text-[10px] sm:text-sm font-mono">
+            <span className="text-ansi-gray">---</span>
+            <span className="text-ansi-yellow">EOF</span>
+            <span className="text-ansi-gray">---</span>
+          </div>
+          <Link 
+            to="/projects"
+            className="group flex items-center gap-2 text-xs sm:text-sm font-mono"
+          >
+            <span className="text-ansi-green">$</span>
+            <span className="text-ansi-yellow group-hover:text-ansi-cyan transition-colors">
+              ls -la ./projects --all
+            </span>
+            <span className="text-ansi-gray group-hover:text-ansi-magenta transition-colors animate-pulse">
+              █
+            </span>
+          </Link>
+          <Link
+            to="/projects"
+            className="px-4 sm:px-6 py-2 sm:py-3 border border-ansi-magenta/50 bg-ansi-magenta/10 text-ansi-magenta hover:bg-ansi-magenta hover:text-black font-bold text-xs sm:text-sm transition-all rounded flex items-center gap-2 shadow-[0_0_15px_rgba(255,121,198,0.2)] hover:shadow-[0_0_25px_rgba(255,121,198,0.4)]"
+          >
+            <span className="material-symbols-outlined text-sm sm:text-lg">folder_open</span>
+            VIEW ALL PROJECTS
+            <span className="material-symbols-outlined text-sm sm:text-lg">arrow_forward</span>
+          </Link>
         </div>
       </div>
     </section>
