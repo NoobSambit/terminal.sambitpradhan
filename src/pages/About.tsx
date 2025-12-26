@@ -13,7 +13,7 @@ const About = () => {
       <div className="pointer-events-none fixed inset-0 z-50 scanline opacity-20"></div>
       <div className="pointer-events-none fixed inset-0 z-40 crt-flicker"></div>
 
-      <div className="flex-1 flex flex-col p-2 sm:p-4 md:p-6 pb-12">
+      <div className="flex-1 flex flex-col p-2 sm:p-4 md:p-6 pb-12 mt-12 sm:mt-14 md:mt-16">
         {/* Terminal Header */}
         <TerminalHeader activePage="about" />
 
