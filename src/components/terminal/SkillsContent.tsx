@@ -1,18 +1,9 @@
-import { X } from "lucide-react";
-
 interface SkillsContentProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
 }
 
-const SkillsContent = ({ activeTab, onTabChange }: SkillsContentProps) => {
-  const tabs = [
-    { id: "languages.js", icon: "javascript", color: "text-ansi-yellow", borderColor: "border-t-ansi-yellow" },
-    { id: "frameworks.json", icon: "data_object", color: "text-ansi-magenta", borderColor: "border-t-ansi-magenta" },
-    { id: "skills_meter.tsx", icon: "speed", color: "text-ansi-green", borderColor: "border-t-ansi-green" },
-    { id: "certs.log", icon: "verified", color: "text-ansi-cyan", borderColor: "border-t-ansi-cyan" },
-    { id: "tools.sh", icon: "terminal", color: "text-orange-400", borderColor: "border-t-orange-400" },
-  ];
+const SkillsContent = ({ activeTab }: SkillsContentProps) => {
 
   const certifications = [
     { date: "2024-08-12", level: "INFO", levelColor: "text-ansi-blue", message: "Generative AI using IBM Watsonx Studio", status: "VERIFIED", statusColor: "text-ansi-green" },
@@ -59,26 +50,6 @@ const SkillsContent = ({ activeTab, onTabChange }: SkillsContentProps) => {
 
   return (
     <section className="flex-1 flex flex-col bg-term-panel relative overflow-hidden">
-      {/* Editor Tabs */}
-      <div className="flex items-center bg-term-bg border-b border-term-border overflow-x-auto">
-        {tabs.map((tab) => (
-          <div
-            key={tab.id}
-            onClick={() => onTabChange(tab.id)}
-            className={`flex items-center gap-2 px-4 py-2 text-sm font-mono border-r border-term-border min-w-fit cursor-pointer transition-colors ${
-              activeTab === tab.id
-                ? `bg-term-panel border-t-2 ${tab.borderColor} ${tab.color}`
-                : "text-ansi-gray hover:bg-term-panel hover:text-ansi-white"
-            }`}
-          >
-            <span className={`material-symbols-outlined text-[14px] ${tab.color}`}>{tab.icon}</span>
-            {tab.id}
-            {activeTab === tab.id && (
-              <X size={14} className="hover:text-ansi-white cursor-pointer ml-2" />
-            )}
-          </div>
-        ))}
-      </div>
 
       {/* Command Line */}
       <div className="px-6 py-3 border-b border-term-border/50 bg-term-panel">
