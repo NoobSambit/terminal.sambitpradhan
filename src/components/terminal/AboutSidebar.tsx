@@ -1,6 +1,21 @@
 const AboutSidebar = () => {
   return (
     <aside className="w-full lg:w-72 bg-[#0d120d] border-b lg:border-b-0 lg:border-r border-term-border p-3 sm:p-4 flex flex-col gap-4 sm:gap-5 shrink-0 overflow-y-auto">
+      {/* Avatar / User Profile */}
+      <div className="flex flex-row lg:flex-col items-center gap-4 lg:gap-0 lg:pt-4 pb-4 lg:pb-6 border-b border-dashed border-term-border">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 lg:mb-4 shrink-0">
+          <div className="absolute inset-0 border-2 border-ansi-green rounded-full animate-pulse opacity-50"></div>
+          <div className="absolute inset-1 bg-term-panel rounded-full overflow-hidden flex items-center justify-center border border-term-border">
+            <span className="material-symbols-outlined text-2xl sm:text-3xl lg:text-4xl text-ansi-gray">person</span>
+          </div>
+          <div className="absolute bottom-0 right-0 w-3 h-3 lg:w-4 lg:h-4 bg-ansi-green rounded-full border-2 border-term-bg"></div>
+        </div>
+        <div className="text-left lg:text-center">
+          <h3 className="text-ansi-white font-bold text-base sm:text-lg tracking-widest">SAMBIT</h3>
+          <p className="text-ansi-green text-xs tracking-wider opacity-80">Full-Stack Developer</p>
+        </div>
+      </div>
+
       {/* System Stats */}
       <div className="flex flex-col gap-2 sm:gap-3">
         <h4 className="text-ansi-gray text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1 flex items-center gap-2">
@@ -18,10 +33,10 @@ const AboutSidebar = () => {
           </div>
         </div>
 
-        {/* Caffeine */}
+        {/* Depression */}
         <div className="group">
           <div className="flex justify-between text-[10px] sm:text-xs mb-1">
-            <span className="text-ansi-yellow">Caffeine</span>
+            <span className="text-ansi-yellow">Depression</span>
             <span className="text-ansi-yellow">Over 9000</span>
           </div>
           <div className="h-1.5 sm:h-2 w-full bg-term-border/30 rounded-sm overflow-hidden">
@@ -37,6 +52,17 @@ const AboutSidebar = () => {
           </div>
           <div className="h-1.5 sm:h-2 w-full bg-term-border/30 rounded-sm overflow-hidden">
             <div className="h-full bg-ansi-green w-full"></div>
+          </div>
+        </div>
+
+        {/* Gym? */}
+        <div className="group">
+          <div className="flex justify-between text-[10px] sm:text-xs mb-1">
+            <span className="text-ansi-cyan">Gym?</span>
+            <span className="text-ansi-cyan">Chills</span>
+          </div>
+          <div className="h-1.5 sm:h-2 w-full bg-term-border/30 rounded-sm overflow-hidden">
+            <div className="h-full bg-ansi-cyan w-[5%]"></div>
           </div>
         </div>
       </div>
@@ -108,11 +134,11 @@ const AboutSidebar = () => {
             <span className="text-ansi-gray uppercase">Energy Level</span>
           </div>
           <div className="h-2 sm:h-2.5 w-full bg-term-border/30 rounded-sm overflow-hidden relative">
-            <div className="h-full bg-gradient-to-r from-ansi-red via-ansi-yellow to-ansi-green w-[85%]"></div>
+            <div className="h-full bg-ansi-red w-[15%]"></div>
           </div>
           <div className="flex justify-between text-[8px] sm:text-[9px] mt-0.5 text-ansi-gray">
             <span>MIN</span>
-            <span>85%</span>
+            <span className="text-ansi-red">15%</span>
             <span>MAX</span>
           </div>
         </div>
