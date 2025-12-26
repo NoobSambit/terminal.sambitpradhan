@@ -211,6 +211,59 @@ const projectsData = [
       repoUrl: "https://github.com/NoobSambit/AI-Career-Assistant",
     },
   },
+  {
+    id: "PRJ-DAANSETU-001",
+    title: "DAANSETU.APP",
+    icon: "volunteer_activism",
+    imageSrc: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&h=300&fit=crop",
+    imageAlt: "DaanSetu Platform",
+    pid: "5001",
+    status: "RUNNING",
+    statusColor: "text-ansi-green animate-pulse",
+    techStack: (
+      <>
+        <span className="text-ansi-magenta">&lt;Next.js</span>{" "}
+        <span className="text-ansi-yellow">Supabase</span>{" "}
+        <span className="text-ansi-cyan">Razorpay</span>{" "}
+        <span className="text-ansi-green">Gemini</span> /&gt;
+      </>
+    ),
+    description:
+      "Comprehensive platform connecting donors, NGOs, volunteers, and corporates for maximizing social impact across India.",
+    version: "v1.0.0",
+    updated: "Ongoing",
+    primaryAction: { label: "Demo", icon: "play_arrow" },
+    demoUrl: "https://daansetu.vercel.app",
+    repoUrl: "https://github.com/NoobSambit/DaanSetu",
+    modalData: {
+      id: "PRJ-DAANSETU-001",
+      name: "DaanSetu v1.0",
+      version: "1.0.0",
+      metadata: {
+        role: "Full Stack Developer",
+        timeline: "Ongoing",
+        status: "Active Development",
+      },
+      stack: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "Supabase", "Razorpay", "Google Gemini AI", "Vercel"],
+      description: "DaanSetu is a comprehensive platform built to connect donors, NGOs, volunteers, and corporates at scale with the goal of maximizing social impact across India. It includes donation processing, AI-powered recommendations, volunteer and campaign management, social engagement features, and corporate CSR support.",
+      features: [
+        { name: "Smart Donation System", status: true, details: "Secure payment processing using Razorpay for donor contributions" },
+        { name: "AI-Powered Recommendations", status: true, details: "Personalized NGO and campaign suggestions using Google Gemini AI" },
+        { name: "Volunteer Management", status: true, details: "Find and apply for volunteer opportunities based on user skills" },
+        { name: "Campaign Management", status: true, details: "NGOs can create, manage, and track fundraising campaigns" },
+        { name: "Social Engagement", status: true, details: "Users can follow organizations, like and comment on posts" },
+        { name: "Corporate CSR Module", status: true, details: "Corporate users can manage employee donations and CSR initiatives" },
+        { name: "Leaderboards & Gamification", status: true, details: "Earn badges and climb contribution leaderboards" },
+        { name: "Analytics Dashboard", status: true, details: "Insights for NGOs and donors with real-time tracking" },
+        { name: "Real-Time Updates", status: true, details: "Supabase real-time subscriptions for interactive UI updates" },
+        { name: "Responsive, Mobile-First Design", status: true, details: "Responsive UI with Tailwind CSS for optimal experience" },
+        { name: "Rate Limiting & Error Handling", status: true, details: "API protection with rate limiting and graceful error boundaries" },
+        { name: "Roadmap Planned Features", status: false, details: "Extended analytics, deeper AI personalization, enhanced social features" },
+      ],
+      demoUrl: "https://daansetu.vercel.app",
+      repoUrl: "https://github.com/NoobSambit/DaanSetu",
+    },
+  },
 ];
 
 const Projects = () => {
