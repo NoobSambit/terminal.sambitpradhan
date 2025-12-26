@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
+
 interface SkillsContentProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
 }
 
 const SkillsContent = ({ activeTab }: SkillsContentProps) => {
+  const [animateSkills, setAnimateSkills] = useState(false);
+
+  useEffect(() => {
+    // Trigger skill bar animations after mount
+    const timer = setTimeout(() => setAnimateSkills(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   const certifications = [
     { date: "2024-08-12", level: "INFO", levelColor: "text-ansi-blue", message: "Generative AI using IBM Watsonx Studio", status: "VERIFIED", statusColor: "text-ansi-green" },
@@ -52,22 +61,23 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
     <section className="flex-1 flex flex-col bg-term-panel relative overflow-hidden">
 
       {/* Command Line */}
-      <div className="px-6 py-3 border-b border-term-border/50 bg-term-panel">
+      <div className="px-6 py-3 border-b border-term-border/50 bg-term-panel opacity-0 animate-fade-in-left" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
         <p className="font-mono text-sm">
           <span className="text-ansi-green font-bold">sambit-pradhan@dev</span>:
           <span className="text-ansi-blue">~/skills</span>{" "}
           <span className="text-ansi-white">$</span>{" "}
           <span className="text-ansi-yellow">cat</span> {activeTab}
+          <span className="animate-terminal-blink ml-1 text-ansi-cyan">▋</span>
         </p>
       </div>
 
       {/* Skill Summary */}
-      <div className="px-6 py-3 bg-term-bg/50 border-b border-term-border/30">
+      <div className="px-6 py-3 bg-term-bg/50 border-b border-term-border/30 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
         <p className="text-ansi-white/80 text-sm">
           <span className="text-ansi-cyan">→</span> Backend-focused Full Stack Developer with strong experience in{" "}
-          <span className="text-ansi-green">scalable APIs</span>,{" "}
-          <span className="text-ansi-magenta">AI-powered systems</span>,{" "}
-          <span className="text-ansi-yellow">real-time data platforms</span>, and modern frontend engineering.
+          <span className="text-ansi-green text-glow-green">scalable APIs</span>,{" "}
+          <span className="text-ansi-magenta text-glow-magenta">AI-powered systems</span>,{" "}
+          <span className="text-ansi-yellow text-glow-yellow">real-time data platforms</span>, and modern frontend engineering.
         </p>
       </div>
 
@@ -75,7 +85,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
       <div className="flex-1 overflow-y-auto p-6 font-mono text-sm md:text-base leading-relaxed">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Languages Section */}
-          <div id="languages.js" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-yellow/30 transition-colors scroll-mt-6">
+          <div id="languages.js" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-yellow/30 transition-all duration-300 scroll-mt-6 terminal-card opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-ansi-yellow flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">javascript</span> languages.js
             </div>
@@ -114,7 +124,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
           </div>
 
           {/* Frameworks Section */}
-          <div id="frameworks.json" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-magenta/30 transition-colors scroll-mt-6">
+          <div id="frameworks.json" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative group hover:border-ansi-magenta/30 transition-all duration-300 scroll-mt-6 terminal-card opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-ansi-magenta flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">data_object</span> frameworks.json
             </div>
@@ -158,7 +168,7 @@ const SkillsContent = ({ activeTab }: SkillsContentProps) => {
           </div>
 
           {/* Skills Meter Section */}
-          <div id="skills_meter.tsx" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-ansi-green/30 transition-colors scroll-mt-6">
+          <div id="skills_meter.tsx" className="bg-term-bg border border-term-border rounded-lg p-5 shadow-lg relative col-span-1 lg:col-span-2 group hover:border-ansi-green/30 transition-all duration-300 scroll-mt-6 terminal-card opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
             <div className="absolute -top-3 left-4 bg-term-panel px-2 text-xs font-bold text-ansi-green flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px]">speed</span> skills_meter.tsx
             </div>
