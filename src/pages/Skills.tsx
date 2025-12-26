@@ -6,6 +6,7 @@ import StatusBar from "@/components/terminal/StatusBar";
 
 const Skills = () => {
   const [activeFile, setActiveFile] = useState("languages.js");
+  const [explorerOpen, setExplorerOpen] = useState(false);
 
   const handleFileClick = (fileName: string) => {
     setActiveFile(fileName);
@@ -21,33 +22,34 @@ const Skills = () => {
         <TerminalHeader activePage="skills" />
 
         {/* Main Content Layout */}
-        <main className="flex-grow flex flex-col md:flex-row max-w-[1400px] mx-auto w-full min-h-0 md:h-[calc(100vh-8rem)] overflow-hidden">
-          {/* Sidebar Explorer - Hidden on mobile, shown as horizontal scroll on tablet */}
-          <div className="hidden md:block">
-            <SkillsExplorer activeFile={activeFile} onFileClick={handleFileClick} />
+        <main className="flex-grow flex flex-col md:flex-row max-w-[1400px] mx-auto w-full min-h-0 md:h-[calc(100vh-8rem)] overflow-hidden border border-term-border rounded-lg bg-term-panel">
+          {/* Mobile Explorer Toggle */}
+          <div className="md:hidden border-b border-term-border">
+            <button
+              onClick={() => setExplorerOpen(!explorerOpen)}
+              className="w-full flex items-center justify-between px-4 py-3 bg-term-bg hover:bg-term-panel/50 transition-colors"
+            >
+              <span className="flex items-center gap-2 text-sm font-bold text-ansi-yellow">
+                <span className="material-symbols-outlined text-lg">folder_open</span>
+                SKILLS_EXPLORER
+              </span>
+              <span className={`material-symbols-outlined text-ansi-gray transition-transform duration-300 ${explorerOpen ? 'rotate-180' : ''}`}>
+                expand_more
+              </span>
+            </button>
+            {explorerOpen && (
+              <div className="animate-fade-in-down max-h-[50vh] overflow-y-auto">
+                <SkillsExplorer activeFile={activeFile} onFileClick={(file) => {
+                  handleFileClick(file);
+                  setExplorerOpen(false);
+                }} />
+              </div>
+            )}
           </div>
 
-          {/* Mobile File Tabs */}
-          <div className="md:hidden flex overflow-x-auto gap-2 p-2 bg-term-panel border-b border-term-border">
-            {["languages.js", "frameworks.json", "skills_meter.tsx", "certs.log", "tools.sh"].map((file) => (
-              <button
-                key={file}
-                onClick={() => {
-                  handleFileClick(file);
-                  const element = document.getElementById(file);
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }}
-                className={`whitespace-nowrap px-3 py-1.5 text-xs font-mono rounded transition-colors ${
-                  activeFile === file 
-                    ? 'bg-ansi-cyan/20 text-ansi-cyan border border-ansi-cyan/50' 
-                    : 'text-ansi-gray hover:text-ansi-white hover:bg-term-bg'
-                }`}
-              >
-                {file}
-              </button>
-            ))}
+          {/* Desktop Sidebar Explorer */}
+          <div className="hidden md:block">
+            <SkillsExplorer activeFile={activeFile} onFileClick={handleFileClick} />
           </div>
 
           {/* Editor Area */}

@@ -440,6 +440,8 @@ const Projects = () => {
     }
   };
 
+  const [explorerOpen, setExplorerOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-term-bg text-ansi-gray font-mono flex flex-col relative overflow-hidden selection:bg-ansi-gray selection:text-term-bg">
       {/* CRT Effects */}
@@ -453,7 +455,29 @@ const Projects = () => {
           {/* Scanline overlay */}
           <div className="absolute inset-0 scanline z-0 opacity-10 pointer-events-none h-full w-full" />
 
-          {/* Left Sidebar - Hidden on mobile/tablet */}
+          {/* Mobile Explorer Toggle */}
+          <div className="lg:hidden z-10">
+            <button
+              onClick={() => setExplorerOpen(!explorerOpen)}
+              className="w-full flex items-center justify-between px-4 py-3 bg-term-panel border border-term-border rounded-lg hover:bg-term-panel/80 transition-colors mb-4"
+            >
+              <span className="flex items-center gap-2 text-sm font-bold text-ansi-cyan">
+                <span className="material-symbols-outlined text-lg">folder_open</span>
+                FILE_EXPLORER
+              </span>
+              <span className={`material-symbols-outlined text-ansi-gray transition-transform duration-300 ${explorerOpen ? 'rotate-180' : ''}`}>
+                expand_more
+              </span>
+            </button>
+            {explorerOpen && (
+              <div className="animate-fade-in-down mb-4 flex flex-col gap-4">
+                <ProjectsExplorer onFileClick={handleFileClick} />
+                <SystemMonitor />
+              </div>
+            )}
+          </div>
+
+          {/* Desktop Sidebar */}
           <aside className="hidden lg:flex flex-col w-56 xl:w-64 shrink-0 gap-6 z-10">
             <ProjectsExplorer onFileClick={handleFileClick} />
             <SystemMonitor />

@@ -1,9 +1,9 @@
 const ContactCodeViewer = () => {
   return (
-    <div className="flex-1 md:border-r border-term-border overflow-y-auto flex flex-col bg-term-panel">
+    <div className="flex-1 lg:border-r border-term-border overflow-y-auto flex flex-col bg-term-panel max-h-full">
       {/* Pane Header */}
-      <div className="px-4 py-2 bg-term-panel/80 border-b border-term-border flex justify-between items-center text-xs text-ansi-gray/60">
-        <span>user_config.json</span>
+      <div className="px-3 sm:px-4 py-2 bg-term-panel/80 border-b border-term-border flex justify-between items-center text-[10px] sm:text-xs text-ansi-gray/60">
+        <span className="truncate">user_config.json</span>
         <span>1.4 KB</span>
       </div>
 
