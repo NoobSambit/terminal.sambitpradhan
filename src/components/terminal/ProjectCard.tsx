@@ -47,7 +47,7 @@ const ProjectCard = ({
           <span className="material-symbols-outlined text-sm text-ansi-gray/70">
             {icon}
           </span>
-          <span className="text-xs font-bold tracking-wider text-ansi-gray/90">
+          <span className="text-xs font-bold tracking-wider text-ansi-cyan">
             {title}
           </span>
         </div>
@@ -84,7 +84,7 @@ const ProjectCard = ({
           <div className="flex flex-wrap gap-2 font-mono text-xs">
             {techStack}
           </div>
-          <p className="text-sm leading-relaxed text-ansi-gray/70 font-normal border-l-2 border-ansi-gray/20 pl-3">
+          <p className="text-sm leading-relaxed text-ansi-gray font-normal border-l-2 border-ansi-gray/30 pl-3">
             {description}
           </p>
         </div>
