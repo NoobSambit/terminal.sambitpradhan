@@ -16,7 +16,7 @@ const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-term-bg shadow-md animate-fade-in-down">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-term-bg shadow-md animate-fade-in-down">
       {/* Title bar with window controls */}
       <div className="flex items-center justify-between px-2 sm:px-4 py-2 bg-term-panel border border-term-border rounded-t-lg">
         <div className="flex items-center gap-2 sm:gap-4">
