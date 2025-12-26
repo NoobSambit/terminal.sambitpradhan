@@ -1,3 +1,5 @@
+import profilePhoto from "@/assets/profile-photo.jpg";
+
 const AboutSidebar = () => {
   return (
     <aside className="w-full lg:w-72 bg-[#0d120d] border-b lg:border-b-0 lg:border-r border-term-border p-3 sm:p-4 flex flex-col gap-4 sm:gap-5 shrink-0 overflow-y-auto">
@@ -6,7 +8,7 @@ const AboutSidebar = () => {
         <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 lg:mb-4 shrink-0">
           <div className="absolute inset-0 border-2 border-ansi-green rounded-full animate-pulse opacity-50"></div>
           <div className="absolute inset-1 bg-term-panel rounded-full overflow-hidden flex items-center justify-center border border-term-border">
-            <span className="material-symbols-outlined text-2xl sm:text-3xl lg:text-4xl text-ansi-gray">person</span>
+            <img src={profilePhoto} alt="Sambit" className="w-full h-full object-cover" />
           </div>
           <div className="absolute bottom-0 right-0 w-3 h-3 lg:w-4 lg:h-4 bg-ansi-green rounded-full border-2 border-term-bg"></div>
         </div>
