@@ -18,7 +18,7 @@ const SkillsExplorer = ({ activeFile, onFileClick }: SkillsExplorerProps) => {
   ];
 
   return (
-    <aside className="w-full md:w-64 bg-term-bg border-r border-term-border flex flex-col shrink-0 md:h-full h-auto">
+    <aside className="w-full md:w-56 lg:w-64 bg-term-bg border-b md:border-b-0 md:border-r border-term-border flex flex-col shrink-0 md:h-full h-auto max-h-[50vh] md:max-h-full overflow-hidden">
       {/* Explorer Header */}
       <div className="p-4 border-b border-term-border flex items-center justify-between">
         <span className="text-xs font-bold text-ansi-gray tracking-widest">EXPLORER</span>

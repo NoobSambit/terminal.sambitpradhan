@@ -42,30 +42,30 @@ const ProjectCard = ({
       onClick={onClick}
     >
       {/* Window Title Bar */}
-      <div className="h-8 bg-ansi-gray/5 border-b border-term-border flex items-center justify-between px-3 group-hover:bg-ansi-gray/10 transition-colors">
-        <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-sm text-ansi-gray/70">
+      <div className="h-7 sm:h-8 bg-ansi-gray/5 border-b border-term-border flex items-center justify-between px-2 sm:px-3 group-hover:bg-ansi-gray/10 transition-colors">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <span className="material-symbols-outlined text-xs sm:text-sm text-ansi-gray/70">
             {icon}
           </span>
-          <span className="text-xs font-bold tracking-wider text-ansi-cyan">
+          <span className="text-[10px] sm:text-xs font-bold tracking-wider text-ansi-cyan truncate max-w-[120px] sm:max-w-none">
             {title}
           </span>
         </div>
-        <div className="flex gap-1.5">
-          <span className="text-[10px] text-ansi-gray/40 hover:text-ansi-gray cursor-pointer">
+        <div className="flex gap-1 sm:gap-1.5">
+          <span className="text-[9px] sm:text-[10px] text-ansi-gray/40 hover:text-ansi-gray cursor-pointer">
             _
           </span>
-          <span className="text-[10px] text-ansi-gray/40 hover:text-ansi-gray cursor-pointer">
+          <span className="text-[9px] sm:text-[10px] text-ansi-gray/40 hover:text-ansi-gray cursor-pointer hidden sm:inline">
             □
           </span>
-          <span className="text-[10px] text-ansi-gray/40 hover:text-ansi-red cursor-pointer">
+          <span className="text-[9px] sm:text-[10px] text-ansi-gray/40 hover:text-ansi-red cursor-pointer">
             x
           </span>
         </div>
       </div>
 
       {/* Card Content */}
-      <div className="p-4 flex flex-col h-full gap-4">
+      <div className="p-3 sm:p-4 flex flex-col h-full gap-3 sm:gap-4">
         {/* Image Preview */}
         <div className="relative w-full h-48 rounded overflow-hidden border border-term-border group-hover:border-ansi-cyan/40 transition-all duration-500">
           <div className="absolute inset-0 bg-gradient-to-t from-term-panel via-transparent to-transparent opacity-80 z-10 group-hover:opacity-60 transition-opacity" />

@@ -10,13 +10,15 @@ const Contact = () => {
       <div className="pointer-events-none fixed inset-0 z-50 scanline opacity-20"></div>
       <div className="pointer-events-none fixed inset-0 z-40 crt-flicker"></div>
 
-      <div className="flex-1 flex flex-col p-2 md:p-6 lg:h-screen lg:max-h-screen">
+      <div className="flex-1 flex flex-col p-2 sm:p-4 md:p-6 pb-12">
         <TerminalHeader activePage="contact" />
 
         {/* Main Content Area */}
-        <main className="flex-1 flex flex-col md:flex-row border-x border-b border-term-border bg-term-panel rounded-b-lg overflow-hidden relative">
-          {/* Left Pane: Code Viewer */}
-          <ContactCodeViewer />
+        <main className="flex-1 flex flex-col lg:flex-row border-x border-b border-term-border bg-term-panel rounded-b-lg overflow-hidden relative">
+          {/* Left Pane: Code Viewer - Hidden on mobile */}
+          <div className="hidden lg:block lg:w-1/2">
+            <ContactCodeViewer />
+          </div>
 
           {/* Right Pane: Contact Form */}
           <ContactForm />

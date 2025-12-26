@@ -19,8 +19,8 @@ const Index = () => {
       <div className="layout-container flex h-full grow flex-col relative z-10">
         <TerminalHeader activePage="home" />
 
-        <main className="flex-1 justify-center py-8 px-4 md:px-8">
-          <div className="mx-auto flex max-w-6xl flex-col gap-16">
+        <main className="flex-1 justify-center py-4 sm:py-6 md:py-8 px-3 sm:px-4 md:px-8 pb-16">
+          <div className="mx-auto flex max-w-6xl flex-col gap-10 sm:gap-12 md:gap-16">
             <HeroSection />
             <AboutSection />
             <SkillsSection />
