@@ -1,3 +1,5 @@
+import profilePhoto from '@/assets/profile-photo.jpg';
+
 const AboutSection = () => {
   return (
     <section>
@@ -24,13 +26,11 @@ const AboutSection = () => {
           {/* Avatar */}
           <div className="aspect-square w-28 sm:w-40 md:w-48 rounded-full border-2 sm:border-4 border-ansi-gray/20 overflow-hidden relative mb-3 sm:mb-4 ring-1 sm:ring-2 ring-ansi-cyan/50 shadow-[0_0_15px_rgba(139,233,253,0.3)]">
             <div className="absolute inset-0 bg-ansi-blue/20 mix-blend-overlay z-10"></div>
-            <div
-              className="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
-              style={{
-                backgroundImage:
-                  "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyuUSC7bLI7JbBuD_VuOT0xQFHiROGsv7XRU_Xbhsvva2X1PTpxZuoFddTHSoCqlUQjKWC29P4VBJsjziIM5QzfNrgTMZnCg6kqvaBe8kDTeMljTT5P2_E1QdWneSxliw9byMqazKW4Qys-gQ4qVYwJ83hsVssGB82GXTQsBlKCGgEeG6IEmsGcsfgw05BpMDxdElRqvzPFYj8Pca4XV_E3skgMdPH4g33Wt3LOjcvwyEhnxMLfoLv58tmgEY-Xn9j3t3Jt8Epcxxo')",
-              }}
-            ></div>
+            <img
+              src={profilePhoto}
+              alt="Sambit Pradhan"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            />
           </div>
 
           <div className="text-center">
