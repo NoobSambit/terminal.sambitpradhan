@@ -264,6 +264,58 @@ const projectsData = [
       repoUrl: "https://github.com/NoobSambit/DaanSetu",
     },
   },
+  {
+    id: "PRJ-KIRANA-001",
+    title: "KIRANA_CORNER.TSX",
+    icon: "storefront",
+    imageSrc: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=300&fit=crop",
+    imageAlt: "Kirana Corner Platform",
+    pid: "6001",
+    status: "RUNNING",
+    statusColor: "text-ansi-green animate-pulse",
+    techStack: (
+      <>
+        <span className="text-ansi-magenta">&lt;React</span>{" "}
+        <span className="text-ansi-yellow">Firebase</span>{" "}
+        <span className="text-ansi-cyan">Leaflet</span>{" "}
+        <span className="text-ansi-green">Vite</span> /&gt;
+      </>
+    ),
+    description:
+      "Hyperlocal shop-to-home marketplace helping neighborhood kirana stores go online with map-centered discovery and real-time inventory.",
+    version: "v1.0.0",
+    updated: "Ongoing",
+    primaryAction: { label: "Demo", icon: "play_arrow" },
+    demoUrl: "https://kirana-corner.vercel.app",
+    repoUrl: "https://github.com/NoobSambit/KIRANA-CORNER",
+    modalData: {
+      id: "PRJ-KIRANA-001",
+      name: "KIRANA-CORNER v1.0",
+      version: "1.0.0",
+      metadata: {
+        role: "Full Stack Developer",
+        timeline: "Ongoing",
+        status: "Active Development",
+      },
+      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase (Firestore & Auth)", "React Leaflet", "Vercel (Serverless)", "Firestore Realtime"],
+      description: "KIRANA-CORNER is a hyperlocal shop-to-home marketplace designed to help neighborhood kirana stores go online without relying on centralized warehouses. It empowers shop owners to list products and manage inventory while enabling customers to discover nearby shops, browse products, place orders, and track deliveries within their area.",
+      features: [
+        { name: "Map-First Shop Discovery", status: true, details: "Interactive React Leaflet map shows nearby shops with dynamic radius filtering" },
+        { name: "Role-Based Authentication", status: true, details: "Firebase Auth with protected routes for customer and shop owner experiences" },
+        { name: "Shop Profile & Inventory Management", status: true, details: "Shop owners can add/edit shop details, manage product listings, and update inventory in bulk" },
+        { name: "Real-Time Firestore Data Sync", status: true, details: "Products, orders, and inventory updates sync live using Firestore subscriptions" },
+        { name: "Cart & Checkout Flow", status: true, details: "Customers can browse products, add to cart, update quantities, and simulate checkout" },
+        { name: "Order Tracking", status: true, details: "Customers can view order history and status updates within the app" },
+        { name: "Address Book", status: true, details: "Users can save multiple delivery addresses for quick checkout" },
+        { name: "Responsive UI / UX", status: true, details: "Mobile-friendly design styled with Tailwind CSS and interactive components" },
+        { name: "Protected Routing", status: true, details: "Routes guarded by role and auth status to secure shop dashboards and actions" },
+        { name: "Serverless API Endpoints", status: true, details: "Vercel serverless functions support backend logic and test APIs" },
+        { name: "Future Enhancements", status: false, details: "Planned features include advanced shop stats, promotions, in-app messaging, and delivery tracking" },
+      ],
+      demoUrl: "https://kirana-corner.vercel.app",
+      repoUrl: "https://github.com/NoobSambit/KIRANA-CORNER",
+    },
+  },
 ];
 
 const Projects = () => {
