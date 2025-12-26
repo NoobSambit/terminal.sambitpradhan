@@ -4,11 +4,11 @@ const ContactCodeViewer = () => {
       {/* Pane Header */}
       <div className="px-3 sm:px-4 py-2 bg-term-panel/80 border-b border-term-border flex justify-between items-center text-[10px] sm:text-xs text-ansi-gray/60">
         <span className="truncate">user_config.json</span>
-        <span>1.4 KB</span>
+        <span>1.2 KB</span>
       </div>
 
       {/* Code Block */}
-      <div className="p-6 font-mono text-sm leading-relaxed flex-1">
+      <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed flex-1">
         <CodeLine num={1}>
           <span className="text-syntax-comment">// Loading user profile configuration...</span>
         </CodeLine>
@@ -24,7 +24,7 @@ const ContactCodeViewer = () => {
         </CodeLine>
         <CodeLine num={4} indent={1}>
           <span className="text-syntax-string">"location"</span>:{" "}
-          <span className="text-ansi-green">"Remote / Worldwide"</span>,
+          <span className="text-ansi-green">"India / Remote-Friendly"</span>,
         </CodeLine>
         <CodeLine num={5} indent={1}>
           <span className="text-syntax-string">"contact_methods"</span>:{" "}
@@ -41,7 +41,7 @@ const ContactCodeViewer = () => {
         </CodeLine>
         <CodeLine num={8} indent={3}>
           <span className="text-syntax-string">"address"</span>:{" "}
-          <span className="text-ansi-green">"hello@developer.com"</span>,
+          <span className="text-ansi-green">"sambitpradhan.dev2004@gmail.com"</span>,
         </CodeLine>
         <CodeLine num={9} indent={3}>
           <span className="text-syntax-string">"priority"</span>:{" "}
@@ -65,7 +65,7 @@ const ContactCodeViewer = () => {
         </CodeLine>
         <CodeLine num={14} indent={3}>
           <span className="text-syntax-string">"handle"</span>:{" "}
-          <span className="text-ansi-green">"@dev_portfolio"</span>
+          <span className="text-ansi-green">"@NoobSambit"</span>
         </CodeLine>
         <CodeLine num={15} indent={2}>
           <span className="text-syntax-func">{"}"}</span>,
@@ -85,7 +85,7 @@ const ContactCodeViewer = () => {
         </CodeLine>
         <CodeLine num={19} indent={3}>
           <span className="text-syntax-string">"handle"</span>:{" "}
-          <span className="text-ansi-green">"/in/dev_expert"</span>
+          <span className="text-ansi-green">"/in/sambit-pradhan"</span>
         </CodeLine>
         <CodeLine num={20} indent={2}>
           <span className="text-syntax-func">{"}"}</span>
@@ -95,41 +95,27 @@ const ContactCodeViewer = () => {
         </CodeLine>
         <CodeLine num={22} indent={1}>
           <span className="text-syntax-string">"availability"</span>:{" "}
-          <span className="text-ansi-yellow">checkAvailability</span>
-          <span className="text-syntax-func">()</span>
+          <span className="text-ansi-green">"Internships | Full-Time | Collaborations"</span>
         </CodeLine>
         <CodeLine num={23}>
           <span className="text-syntax-func">{"}"}</span>;
         </CodeLine>
-        <CodeLine num={24} />
-        <CodeLine num={25}>
-          <span className="text-syntax-comment">{"/*"}</span>
-        </CodeLine>
-        <CodeLine num={26}>
-          <span className="text-syntax-comment"> * Execute communication protocols below</span>
-        </CodeLine>
-        <CodeLine num={27}>
-          <span className="text-syntax-comment"> * or parse system config for direct links.</span>
-        </CodeLine>
-        <CodeLine num={28}>
-          <span className="text-syntax-comment"> */</span>
-        </CodeLine>
       </div>
 
-      {/* System Stats */}
-      <div className="p-6 border-t border-term-border bg-term-panel/80 grid grid-cols-2 gap-4">
-        <div className="flex flex-col gap-1">
-          <span className="text-[10px] text-ansi-gray/60 uppercase tracking-widest">System Load</span>
-          <div className="h-1 w-full bg-ansi-gray/30 rounded-full overflow-hidden">
-            <div className="h-full bg-ansi-green w-[42%]"></div>
-          </div>
-        </div>
-        <div className="flex flex-col gap-1">
-          <span className="text-[10px] text-ansi-gray/60 uppercase tracking-widest">Memory</span>
-          <div className="h-1 w-full bg-ansi-gray/30 rounded-full overflow-hidden">
-            <div className="h-full bg-ansi-magenta w-[78%]"></div>
-          </div>
-        </div>
+      {/* Status Badges */}
+      <div className="p-4 sm:p-6 border-t border-term-border bg-term-panel/80 flex flex-wrap gap-2 sm:gap-3">
+        <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-ansi-green/10 border border-ansi-green/30 rounded text-[10px] sm:text-xs text-ansi-green font-mono">
+          <span className="w-1.5 h-1.5 bg-ansi-green rounded-full animate-pulse"></span>
+          Open to Work
+        </span>
+        <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-ansi-cyan/10 border border-ansi-cyan/30 rounded text-[10px] sm:text-xs text-ansi-cyan font-mono">
+          <span className="material-symbols-outlined text-[10px] sm:text-xs">public</span>
+          India / Remote
+        </span>
+        <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-ansi-magenta/10 border border-ansi-magenta/30 rounded text-[10px] sm:text-xs text-ansi-magenta font-mono">
+          <span className="material-symbols-outlined text-[10px] sm:text-xs">work</span>
+          Backend • Full Stack • AI
+        </span>
       </div>
     </div>
   );
@@ -149,7 +135,7 @@ const CodeLine = ({
   
   return (
     <div className="flex text-ansi-gray/90">
-      <span className="w-8 text-right mr-4 text-syntax-comment select-none text-sm">{num}</span>
+      <span className="w-6 sm:w-8 text-right mr-2 sm:mr-4 text-syntax-comment select-none text-xs sm:text-sm">{num}</span>
       <span style={{ paddingLeft: `${paddingLeft}px` }}>{children}</span>
     </div>
   );
