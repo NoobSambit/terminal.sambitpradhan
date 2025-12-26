@@ -10,14 +10,16 @@ const About = () => {
       <div className="pointer-events-none fixed inset-0 z-50 scanline opacity-20"></div>
       <div className="pointer-events-none fixed inset-0 z-40 crt-flicker"></div>
 
-      <div className="flex-1 flex flex-col p-2 md:p-6 lg:h-screen lg:max-h-screen">
+      <div className="flex-1 flex flex-col p-2 sm:p-4 md:p-6 pb-12">
         {/* Terminal Header */}
         <TerminalHeader activePage="about" />
 
         {/* Main Content Area */}
         <main className="flex-1 flex flex-col lg:flex-row border-x border-b border-term-border bg-term-panel rounded-b-lg overflow-hidden relative">
-          {/* Left Sidebar */}
-          <AboutSidebar />
+          {/* Left Sidebar - Hidden on mobile */}
+          <div className="hidden lg:block">
+            <AboutSidebar />
+          </div>
 
           {/* Right Content Pane */}
           <AboutContent />

@@ -446,79 +446,81 @@ const Projects = () => {
       <div className="pointer-events-none fixed inset-0 z-50 scanline opacity-20"></div>
       <div className="pointer-events-none fixed inset-0 z-40 crt-flicker"></div>
 
-      <div className="flex-1 flex flex-col p-2 md:p-6">
+      <div className="flex-1 flex flex-col p-2 sm:p-4 md:p-6 pb-12">
         <TerminalHeader activePage="projects" />
 
-      <main className="flex-1 flex flex-col md:flex-row max-w-[1600px] w-full mx-auto p-4 md:p-6 gap-6 relative">
-        {/* Scanline overlay */}
-        <div className="absolute inset-0 scanline z-0 opacity-10 pointer-events-none h-full w-full" />
+        <main className="flex-1 flex flex-col lg:flex-row max-w-[1600px] w-full mx-auto p-2 sm:p-4 md:p-6 gap-4 sm:gap-6 relative">
+          {/* Scanline overlay */}
+          <div className="absolute inset-0 scanline z-0 opacity-10 pointer-events-none h-full w-full" />
 
-        {/* Left Sidebar */}
-        <aside className="hidden md:flex flex-col w-64 shrink-0 gap-6 z-10">
-          <ProjectsExplorer onFileClick={handleFileClick} />
-          <SystemMonitor />
-        </aside>
+          {/* Left Sidebar - Hidden on mobile/tablet */}
+          <aside className="hidden lg:flex flex-col w-56 xl:w-64 shrink-0 gap-6 z-10">
+            <ProjectsExplorer onFileClick={handleFileClick} />
+            <SystemMonitor />
+          </aside>
 
-        {/* Main Content */}
-        <section className="flex-1 flex flex-col gap-6 z-10 min-w-0">
-          {/* Command Header */}
-          <div className="bg-term-panel border border-term-border p-4 rounded-lg shadow-glow">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
-              <h2 className="text-xl md:text-2xl font-bold flex items-center gap-3 text-ansi-white">
-                <span className="text-ansi-cyan">&gt;</span>
-                ls -la <span className="text-ansi-yellow">./projects/</span>
-                <span className="w-3 h-6 bg-ansi-gray animate-pulse ml-1 inline-block" />
-              </h2>
-              <div className="flex items-center gap-4 text-sm font-mono opacity-80">
-                <span className="text-term-bg bg-ansi-gray px-2 py-1 rounded font-bold">
-                  --view=grid
-                </span>
-                <span className="text-term-bg bg-ansi-gray/70 px-2 py-1 rounded font-bold">
-                  --sort=date
-                </span>
+          {/* Main Content */}
+          <section className="flex-1 flex flex-col gap-4 sm:gap-6 z-10 min-w-0">
+            {/* Command Header */}
+            <div className="bg-term-panel border border-term-border p-3 sm:p-4 rounded-lg shadow-glow">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-2">
+                <h2 className="text-base sm:text-xl md:text-2xl font-bold flex items-center gap-2 sm:gap-3 text-ansi-white">
+                  <span className="text-ansi-cyan">&gt;</span>
+                  <span className="hidden xs:inline">ls -la</span>
+                  <span className="xs:hidden">ls</span>
+                  <span className="text-ansi-yellow">./projects/</span>
+                  <span className="w-2 sm:w-3 h-4 sm:h-6 bg-ansi-gray animate-pulse ml-1 inline-block" />
+                </h2>
+                <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-mono opacity-80">
+                  <span className="text-term-bg bg-ansi-gray px-1.5 sm:px-2 py-0.5 sm:py-1 rounded font-bold">
+                    --view=grid
+                  </span>
+                  <span className="text-term-bg bg-ansi-gray/70 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded font-bold hidden sm:inline">
+                    --sort=date
+                  </span>
+                </div>
               </div>
+              <p className="text-xs sm:text-sm font-mono text-ansi-gray/50 border-t border-term-border pt-2 mt-2">
+                Total: {projectsData.length} projects | <span className="hidden sm:inline">disk usage: 128MB</span>
+              </p>
             </div>
-            <p className="text-sm font-mono text-ansi-gray/50 border-t border-term-border pt-2 mt-2">
-              Total found: {projectsData.length} directories, {projectsData.length * 4} files | disk usage: 128MB
-            </p>
-          </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-            {projectsData.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                icon={project.icon}
-                imageSrc={project.imageSrc}
-                imageAlt={project.imageAlt}
-                pid={project.pid}
-                status={project.status}
-                statusColor={project.statusColor}
-                techStack={project.techStack}
-                description={project.description}
-                version={project.version}
-                updated={project.updated}
-                primaryAction={project.primaryAction}
-                demoUrl={project.demoUrl}
-                repoUrl={project.repoUrl}
-                onClick={() => handleProjectClick(project.id)}
-              />
-            ))}
-          </div>
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6">
+              {projectsData.map((project, index) => (
+                <div key={project.id} className="opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}>
+                  <ProjectCard
+                    title={project.title}
+                    icon={project.icon}
+                    imageSrc={project.imageSrc}
+                    imageAlt={project.imageAlt}
+                    pid={project.pid}
+                    status={project.status}
+                    statusColor={project.statusColor}
+                    techStack={project.techStack}
+                    description={project.description}
+                    version={project.version}
+                    updated={project.updated}
+                    primaryAction={project.primaryAction}
+                    demoUrl={project.demoUrl}
+                    repoUrl={project.repoUrl}
+                    onClick={() => handleProjectClick(project.id)}
+                  />
+                </div>
+              ))}
+            </div>
 
-          {/* Load More Button */}
-          <div className="flex justify-center py-6">
-            <button className="flex items-center gap-2 px-6 py-3 bg-term-panel border border-ansi-gray/40 hover:bg-ansi-gray hover:text-term-bg hover:shadow-glow transition-all rounded text-sm font-bold uppercase tracking-widest text-ansi-gray">
-              <span className="material-symbols-outlined text-lg animate-pulse">
-                download
-              </span>
-              Load More Data
-            </button>
-          </div>
-        </section>
-      </main>
-
+            {/* Load More Button */}
+            <div className="flex justify-center py-4 sm:py-6">
+              <button className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-term-panel border border-ansi-gray/40 hover:bg-ansi-gray hover:text-term-bg hover:shadow-glow transition-all rounded text-xs sm:text-sm font-bold uppercase tracking-widest text-ansi-gray">
+                <span className="material-symbols-outlined text-base sm:text-lg animate-pulse">
+                  download
+                </span>
+                Load More
+              </button>
+            </div>
+          </section>
+        </main>
       </div>
 
       <StatusBar />
