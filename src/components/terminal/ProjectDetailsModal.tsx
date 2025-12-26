@@ -8,7 +8,7 @@ import {
 interface ProjectFeature {
   name: string;
   status: boolean;
-  provider?: string;
+  details?: string;
 }
 
 interface ProjectData {
@@ -177,33 +177,53 @@ const ProjectDetailsModal = ({ open, onOpenChange, project }: ProjectDetailsModa
                   <span className="text-syntax-var">features</span>: [
                 </CodeLine>
                 {project.features.map((feature, i) => (
-                  <CodeLine key={feature.name} num={21 + i} indent={2}>
-                    {"{ "}
-                    <span className="text-syntax-var">name</span>: <span className="text-syntax-string">"{feature.name}"</span>,{" "}
-                    <span className="text-syntax-var">status</span>: <span className={feature.status ? "text-ansi-green" : "text-syntax-keyword"}>{feature.status ? "true" : "false"}</span>
-                    {feature.provider && (
-                      <>, <span className="text-syntax-var">provider</span>: <span className="text-syntax-string">"{feature.provider}"</span></>
+                  <div key={feature.name}>
+                    <CodeLine num={21 + (i * 2)} indent={2}>
+                      {"{ "}
+                      <span className="text-syntax-var">name</span>: <span className="text-syntax-string">"{feature.name}"</span>,{" "}
+                      <span className="text-syntax-var">status</span>: <span className={feature.status ? "text-ansi-green" : "text-ansi-yellow"}>{feature.status ? "true" : "false"}</span>,
+                    </CodeLine>
+                    {feature.details && (
+                      <CodeLine num={21 + (i * 2) + 1} indent={3}>
+                        <span className="text-syntax-var">details</span>: <span className="text-ansi-gray/70">"{feature.details}"</span>
+                      </CodeLine>
                     )}
-                    {" }"},
-                  </CodeLine>
+                    <CodeLine num={feature.details ? 21 + (i * 2) + 2 : 21 + (i * 2) + 1} indent={2}>
+                      {"}"},
+                    </CodeLine>
+                  </div>
                 ))}
                 <CodeLine num={21 + project.features.length} indent={1}>],</CodeLine>
                 <CodeLine num={22 + project.features.length} />
                 <CodeLine num={23 + project.features.length} indent={1}>
                   <span className="text-syntax-func">renderButtons</span>() {"{"}
                 </CodeLine>
-                <CodeLine num={24 + project.features.length} indent={2}>
+                <CodeLine num={24 + project.features.length * 3} indent={2}>
                   <div className="flex flex-wrap gap-4 py-2">
-                    <button className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 px-3 py-1.5 rounded transition-all group">
-                      <span className="text-syntax-keyword">return</span>
-                      <span className="font-bold">"Live Demo"</span>
-                      <span className="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">open_in_new</span>
-                    </button>
-                    <button className="flex items-center gap-2 bg-ansi-gray/10 hover:bg-ansi-gray/20 text-ansi-gray border border-ansi-gray/40 px-3 py-1.5 rounded transition-all">
-                      <span className="text-syntax-keyword">return</span>
-                      <span className="font-bold">"GitHub Repo"</span>
-                      <span className="material-symbols-outlined text-[16px]">code</span>
-                    </button>
+                    {project.demoUrl && (
+                      <a 
+                        href={project.demoUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 px-3 py-1.5 rounded transition-all group"
+                      >
+                        <span className="text-syntax-keyword">return</span>
+                        <span className="font-bold">"Live Demo"</span>
+                        <span className="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                      </a>
+                    )}
+                    {project.repoUrl && (
+                      <a 
+                        href={project.repoUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-ansi-gray/10 hover:bg-ansi-gray/20 text-ansi-gray border border-ansi-gray/40 px-3 py-1.5 rounded transition-all"
+                      >
+                        <span className="text-syntax-keyword">return</span>
+                        <span className="font-bold">"GitHub Repo"</span>
+                        <span className="material-symbols-outlined text-[16px]">code</span>
+                      </a>
+                    )}
                   </div>
                 </CodeLine>
                 <CodeLine num={25 + project.features.length} indent={1}>{"}"}</CodeLine>

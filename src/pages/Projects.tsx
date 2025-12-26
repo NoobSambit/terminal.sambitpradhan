@@ -6,165 +6,56 @@ import ProjectCard from "@/components/terminal/ProjectCard";
 import StatusBar from "@/components/terminal/StatusBar";
 import ProjectDetailsModal, { ProjectData } from "@/components/terminal/ProjectDetailsModal";
 
-// Hardcoded project data - will be made dynamic later
+// Project data
 const projectsData = [
   {
-    id: "PRJ-001",
-    title: "E_COMMERCE.JSX",
-    icon: "shopping_cart",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAg_TFtVZsywJoYPZKJiFZyTnfi7XXcW_i3PMjpeteYdd8fxVUZ0QVTA1ycEGBk_M5IuoWs7mu5d2vboU8XMFwdNTKJFRhEAmR9KFF_NF3JRB2s0YIw6YzMfhF51orX_OnjbGCiAuCxbIERItKCcDNO4BU_iTytMU3gIgRU_krhp2xXTb_Cy93quxHo03JYYmAU0Q1Z9AHaHgeVZVFp3FQKarmajqyW3EMCc1tVW0Pi9ih50NgvMFiaHjhXFkl2b339LHGLMCgDqYeC",
-    imageAlt: "E-commerce Platform",
-    pid: "9921",
+    id: "PRJ-ARMY-001",
+    title: "ARMYVERSE.JSX",
+    icon: "music_note",
+    imageSrc: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+    imageAlt: "ARMYVERSE Platform",
+    pid: "2001",
     status: "RUNNING",
     statusColor: "text-ansi-green animate-pulse",
     techStack: (
       <>
-        <span className="text-ansi-magenta">&lt;React</span>{" "}
-        <span className="text-ansi-yellow">Node.js</span>{" "}
-        <span className="text-ansi-cyan">MongoDB</span> /&gt;
+        <span className="text-ansi-magenta">&lt;Next.js</span>{" "}
+        <span className="text-ansi-yellow">React</span>{" "}
+        <span className="text-ansi-cyan">MongoDB</span>{" "}
+        <span className="text-ansi-green">Gemini</span> /&gt;
       </>
     ),
     description:
-      "A comprehensive e-commerce solution designed with a focus on scalability and security. Features include real-time inventory tracking via WebSockets.",
-    version: "v1.0.4",
-    updated: "2h ago",
+      "BTS-focused analytics and fan engagement platform. Real-time Spotify/YouTube insights, AI playlist generation, and modern fan-centric UI.",
+    version: "v2.0.0",
+    updated: "Ongoing",
     primaryAction: { label: "Demo", icon: "play_arrow" },
-    // Modal data
+    demoUrl: "https://armyverse.vercel.app",
+    repoUrl: "https://github.com/NoobSambit/ARMYVERSE2",
     modalData: {
-      id: "PRJ-001",
-      name: "E-Commerce Platform v1.0",
-      version: "1.0.4",
-      metadata: {
-        role: "Lead Developer",
-        timeline: "3 Months",
-        status: "Active Production",
-      },
-      stack: ["React", "Node.js", "Express", "MongoDB", "Redux"],
-      description: "A comprehensive e-commerce solution designed with a focus on scalability and security. Features include real-time inventory tracking via WebSockets, O-Auth integration for secure user authentication, and a custom-built payment gateway wrapper.",
-      features: [
-        { name: "Auth", status: true },
-        { name: "Payments", status: true, provider: "Stripe" },
-        { name: "Analytics", status: false },
-      ],
-    },
-  },
-  {
-    id: "PRJ-002",
-    title: "AI_CHATBOT.EXE",
-    icon: "terminal",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuBAtE8ltjyUnAvSU-l1vD8AX-20z8kvdb8pl6J7y0GFQnOctFdRj0IXxNLqejDS8lUX3cD3Qzrh6-v0c5XZy_RwdmqF3Eks0git6ybv7uUHmRGG70gKgqbi8STRSTopsXqj8-HANr1PpotjmdXnuIz5igFW67POntqPqydgt31w_E49SMBvBUkkBcNu6rwiE99dbQtmwi5Kb3A8BjKyY832XDB-FqW1gTm-pF6tP8So3VCPCWB6fXe5E9FZ0ac-DFaz5_ChwCd3Eie0",
-    imageAlt: "AI Chatbot Preview",
-    pid: "8472",
-    status: "COMPILING...",
-    statusColor: "text-ansi-yellow",
-    techStack: (
-      <>
-        <span className="text-ansi-magenta">const</span>{" "}
-        <span className="text-ansi-white">stack</span> = [
-        <span className="text-ansi-yellow">'Python'</span>,{" "}
-        <span className="text-ansi-yellow">'TensorFlow'</span>];
-      </>
-    ),
-    description:
-      "An advanced AI chatbot designed to simulate human conversation using natural language processing. Features context awareness and sentiment analysis modules.",
-    version: "v2.1.0",
-    updated: "1d ago",
-    primaryAction: { label: "Launch", icon: "play_arrow" },
-    modalData: {
-      id: "PRJ-002",
-      name: "AI Chatbot v2.1",
-      version: "2.1.0",
-      metadata: {
-        role: "ML Engineer",
-        timeline: "4 Months",
-        status: "In Development",
-      },
-      stack: ["Python", "TensorFlow", "NLP", "FastAPI", "Redis"],
-      description: "An advanced AI chatbot designed to simulate human conversation using natural language processing. Features context awareness, sentiment analysis modules, and multi-language support.",
-      features: [
-        { name: "NLP Engine", status: true },
-        { name: "Sentiment Analysis", status: true },
-        { name: "Voice Support", status: false },
-      ],
-    },
-  },
-  {
-    id: "PRJ-003",
-    title: "MARKET_WATCH.SH",
-    icon: "monitoring",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuCn8iU0nlYHjZBN-IWJy7KBxp4zfvbQYMwW5UC0FBCZ87ikGxOBv80qhncUfAvr8eYBGVITx9iimFn326TReOrQfK5_hSIPw3b4oeXM-SNzu7cIAYzwzj_JbjuqgP4NqxshHx6xkKszA8enI6AGAT27_FCGg6xpsvr3hIP1PKwWPQMBwsdbtYl4yOvWSKBck_dpTOoqZcTVjJjWmLmM9oYRxTMcTb_biQ1WXNqvcVuypOQB8ha0X74YrRiNHmZxJPbmNTZ5FoC9hIl_",
-    imageAlt: "Crypto Tracker",
-    pid: "1024",
-    status: "STOPPED",
-    statusColor: "text-ansi-white",
-    techStack: (
-      <>
-        <span className="text-ansi-magenta">import</span> {"{"}{" "}
-        <span className="text-ansi-white">Socket</span> {"}"}{" "}
-        <span className="text-ansi-magenta">from</span>{" "}
-        <span className="text-ansi-yellow">'WebSockets'</span>;
-      </>
-    ),
-    description:
-      "Real-time cryptocurrency tracking dashboard using WebSockets for live data feeds. Implements custom charting library and low-latency updates.",
-    version: "v1.0.4-beta",
-    updated: "5d ago",
-    primaryAction: { label: "Demo", icon: "visibility" },
-    modalData: {
-      id: "PRJ-003",
-      name: "Market Watch Dashboard",
-      version: "1.0.4-beta",
+      id: "PRJ-ARMY-001",
+      name: "ARMYVERSE v2.0",
+      version: "2.0.0",
       metadata: {
         role: "Full Stack Developer",
-        timeline: "2 Months",
-        status: "Beta Testing",
+        timeline: "Ongoing",
+        status: "Active Development",
       },
-      stack: ["React", "WebSockets", "D3.js", "Node.js", "PostgreSQL"],
-      description: "Real-time cryptocurrency tracking dashboard using WebSockets for live data feeds. Implements custom charting library, low-latency updates, and price alerts.",
+      stack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Recharts", "Tailwind CSS", "Gemini API"],
+      description: "ARMYVERSE is a BTS-focused analytics and fan engagement platform built for ARMYs. The application provides real-time and historical insights into BTS Spotify and YouTube performance, AI-powered playlist generation, and a modern fan-centric UI. The system is architected with scalable routing, modular components, and clean API integration to support future social and competitive features.",
       features: [
-        { name: "Real-time Data", status: true },
-        { name: "Price Alerts", status: true },
-        { name: "Portfolio Tracking", status: false },
+        { name: "Spotify Analytics Dashboard", status: true, details: "Daily, monthly, yearly song, album, and group-level streaming stats" },
+        { name: "YouTube Trending Tracker", status: true, details: "Real-time trending videos with dedicated routing and views" },
+        { name: "AI Playlist Generator", status: true, details: "Prompt-based playlist generation using LLM integration" },
+        { name: "Manual Playlist Builder", status: true, details: "User-curated playlists with structured track management" },
+        { name: "Advanced Routing System", status: true, details: "Clean Next.js routing for analytics, playlists, and trending views" },
+        { name: "Interactive Data Visualizations", status: true, details: "Charts and graphs implemented using Recharts" },
+        { name: "Modern Dark UI / UX", status: true, details: "Dark purple-black gradient theme with neon and glassmorphism effects" },
+        { name: "Backend Integration Ready", status: true, details: "Prepared API contracts for future social and competitive features" },
+        { name: "Microblogging / Social Layer", status: false, details: "Planned fan interaction and engagement features" },
       ],
-    },
-  },
-  {
-    id: "PRJ-004",
-    title: "DATA_PIPELINE.PY",
-    icon: "pie_chart",
-    imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-    imageAlt: "Data Pipeline",
-    pid: "3341",
-    status: "IDLE",
-    statusColor: "text-ansi-magenta",
-    techStack: (
-      <>
-        <span className="text-ansi-magenta">def</span>{" "}
-        <span className="text-ansi-white">process_data</span>(df:{" "}
-        <span className="text-ansi-yellow">Pandas</span>):
-      </>
-    ),
-    description:
-      "Automated ETL pipeline for processing large datasets. Includes visualization components built with D3.js and backend processing with Python Pandas.",
-    version: "v0.9.1",
-    updated: "1wk ago",
-    primaryAction: { label: "Details", icon: "info" },
-    modalData: {
-      id: "PRJ-004",
-      name: "Data Pipeline ETL",
-      version: "0.9.1",
-      metadata: {
-        role: "Data Engineer",
-        timeline: "6 Months",
-        status: "Maintenance",
-      },
-      stack: ["Python", "Pandas", "Apache Airflow", "PostgreSQL", "D3.js"],
-      description: "Automated ETL pipeline for processing large datasets. Includes visualization components built with D3.js, scheduled jobs with Airflow, and backend processing with Python Pandas.",
-      features: [
-        { name: "ETL Processing", status: true },
-        { name: "Scheduling", status: true, provider: "Airflow" },
-        { name: "Real-time Sync", status: false },
-      ],
+      demoUrl: "https://armyverse.vercel.app",
+      repoUrl: "https://github.com/NoobSambit/ARMYVERSE2",
     },
   },
 ];
@@ -228,7 +119,7 @@ const Projects = () => {
               </div>
             </div>
             <p className="text-sm font-mono text-ansi-gray/50 border-t border-term-border pt-2 mt-2">
-              Total found: 3 directories, 12 files | disk usage: 482MB
+              Total found: {projectsData.length} directories, {projectsData.length * 4} files | disk usage: 128MB
             </p>
           </div>
 
@@ -249,6 +140,8 @@ const Projects = () => {
                 version={project.version}
                 updated={project.updated}
                 primaryAction={project.primaryAction}
+                demoUrl={project.demoUrl}
+                repoUrl={project.repoUrl}
                 onClick={() => handleProjectClick(project.id)}
               />
             ))}
