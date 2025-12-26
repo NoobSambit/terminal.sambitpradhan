@@ -1,79 +1,112 @@
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [showCursor, setShowCursor] = useState(true);
+  const [typedCommand, setTypedCommand] = useState("");
+  const [showLogs, setShowLogs] = useState([false, false, false]);
+  
+  const command = "./init_system.sh --verbose";
+  
+  useEffect(() => {
+    // Typing animation for command
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index <= command.length) {
+        setTypedCommand(command.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+        // Show logs sequentially after typing completes
+        setTimeout(() => setShowLogs([true, false, false]), 300);
+        setTimeout(() => setShowLogs([true, true, false]), 800);
+        setTimeout(() => setShowLogs([true, true, true]), 1300);
+      }
+    }, 50);
+    
+    // Cursor blink
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 530);
+    
+    return () => {
+      clearInterval(typingInterval);
+      clearInterval(cursorInterval);
+    };
+  }, []);
+
+  const logs = [
+    { module: "Backend_Engineering", delay: "stagger-1" },
+    { module: "AI_Integration", delay: "stagger-2" },
+    { module: "System_Architecture", delay: "stagger-3" },
+  ];
+
   return (
-    <section className="animate-fade-in relative group">
-      <div className="absolute -left-2 top-0 bottom-0 w-0.5 bg-ansi-gray/20"></div>
+    <section className="relative group">
+      <div className="absolute -left-2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-ansi-cyan/50 via-ansi-magenta/50 to-ansi-yellow/50 animate-glow"></div>
       
       {/* Command prompt */}
-      <div className="flex items-center gap-2 text-sm mb-4 font-bold">
-        <span className="text-ansi-green">sambit-pradhan@dev</span>
+      <div className="flex items-center gap-2 text-sm mb-4 font-bold opacity-0 animate-fade-in-up">
+        <span className="text-ansi-green text-glow-green">sambit-pradhan@dev</span>
         <span className="text-ansi-white">:</span>
         <span className="text-ansi-blue">~</span>
         <span className="text-ansi-white">$</span>
-        <span className="text-ansi-yellow">./init_system.sh</span>
-        <span className="text-ansi-gray">--verbose</span>
+        <span className="text-ansi-yellow">{typedCommand}</span>
+        <span className={`text-ansi-cyan ${showCursor ? 'opacity-100' : 'opacity-0'}`}>▋</span>
       </div>
 
       {/* Welcome message */}
       <div className="pl-4 border-l-2 border-ansi-cyan/30 ml-1 py-2">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-          Building <span className="text-ansi-cyan">Scalable Systems</span>,{" "}
-          <span className="text-ansi-magenta">Intelligent Products</span>, and{" "}
-          <span className="text-ansi-yellow">Real-World Platforms</span>
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 text-white opacity-0 animate-fade-in-up stagger-2">
+          Building <span className="text-ansi-cyan text-glow-cyan transition-all duration-300 hover:scale-105 inline-block">Scalable Systems</span>,{" "}
+          <span className="text-ansi-magenta text-glow-magenta transition-all duration-300 hover:scale-105 inline-block">Intelligent Products</span>, and{" "}
+          <span className="text-ansi-yellow text-glow-yellow transition-all duration-300 hover:scale-105 inline-block">Real-World Platforms</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-ansi-gray mb-4 max-w-3xl">
+        <p className="text-lg md:text-xl text-ansi-gray mb-4 max-w-3xl opacity-0 animate-fade-in-up stagger-3">
           Full Stack Developer focused on backend engineering, AI-powered applications, and performance-driven systems.
         </p>
 
-        <p className="text-ansi-white/70 mb-8 max-w-4xl text-base md:text-lg leading-relaxed">
+        <p className="text-ansi-white/70 mb-8 max-w-4xl text-base md:text-lg leading-relaxed opacity-0 animate-fade-in-up stagger-4">
           I design and build production-grade web platforms — from hyperlocal marketplaces and AI document systems 
           to fan analytics engines — with a strong emphasis on scalability, clean architecture, and real-world constraints.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-up stagger-5">
           <a href="#projects">
-            <Button className="bg-ansi-cyan hover:bg-ansi-cyan/80 text-black font-bold px-6 py-2 transition-all hover:shadow-[0_0_20px_rgba(139,233,253,0.5)]">
+            <Button className="bg-ansi-cyan hover:bg-ansi-cyan/80 text-black font-bold px-6 py-2 btn-glow transition-all hover:shadow-[0_0_30px_rgba(139,233,253,0.6)] hover:scale-105">
               <span className="material-symbols-outlined text-[18px] mr-2">folder_open</span>
               View Projects
             </Button>
           </a>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-ansi-green text-ansi-green hover:bg-ansi-green hover:text-black font-bold px-6 py-2 transition-all">
+            <Button variant="outline" className="border-ansi-green text-ansi-green hover:bg-ansi-green hover:text-black font-bold px-6 py-2 btn-glow transition-all hover:shadow-[0_0_30px_rgba(80,250,123,0.4)] hover:scale-105">
               <span className="material-symbols-outlined text-[18px] mr-2">download</span>
               Download Resume
             </Button>
           </a>
           <a href="#contact">
-            <Button variant="outline" className="border-ansi-magenta text-ansi-magenta hover:bg-ansi-magenta hover:text-black font-bold px-6 py-2 transition-all">
+            <Button variant="outline" className="border-ansi-magenta text-ansi-magenta hover:bg-ansi-magenta hover:text-black font-bold px-6 py-2 btn-glow transition-all hover:shadow-[0_0_30px_rgba(255,121,198,0.4)] hover:scale-105">
               <span className="material-symbols-outlined text-[18px] mr-2">mail</span>
               Contact Me
             </Button>
           </a>
         </div>
 
-        {/* Loading logs */}
+        {/* Loading logs with staggered animation */}
         <div className="font-mono text-sm md:text-base space-y-1 mt-8">
-          <div className="flex gap-2">
-            <span className="text-ansi-gray">[10:04:23]</span>
-            <span className="text-ansi-blue">INFO</span>
-            <span className="text-ansi-white/80">Loading modules: Backend_Engineering...</span>
-            <span className="text-ansi-green font-bold">DONE</span>
-          </div>
-          <div className="flex gap-2">
-            <span className="text-ansi-gray">[10:04:24]</span>
-            <span className="text-ansi-blue">INFO</span>
-            <span className="text-ansi-white/80">Loading modules: AI_Integration...</span>
-            <span className="text-ansi-green font-bold">DONE</span>
-          </div>
-          <div className="flex gap-2">
-            <span className="text-ansi-gray">[10:04:25]</span>
-            <span className="text-ansi-blue">INFO</span>
-            <span className="text-ansi-white/80">Loading modules: System_Architecture...</span>
-            <span className="text-ansi-green font-bold">DONE</span>
-          </div>
+          {logs.map((log, index) => (
+            <div 
+              key={log.module}
+              className={`flex gap-2 transition-all duration-500 ${showLogs[index] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+            >
+              <span className="text-ansi-gray">[10:04:{23 + index}]</span>
+              <span className="text-ansi-blue">INFO</span>
+              <span className="text-ansi-white/80">Loading modules: {log.module}...</span>
+              <span className={`text-ansi-green font-bold ${showLogs[index] ? 'animate-scale-in' : 'opacity-0'}`}>DONE</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

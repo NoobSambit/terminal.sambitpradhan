@@ -13,54 +13,60 @@ const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-term-bg shadow-md">
+    <header className="sticky top-0 z-40 w-full bg-term-bg shadow-md animate-fade-in-down">
       {/* Title bar with window controls */}
       <div className="flex items-center justify-between px-4 py-2 bg-term-panel border border-term-border rounded-t-lg">
         <div className="flex items-center gap-4">
           <div className="flex gap-2">
-            <div className="flex size-3 items-center justify-center rounded-full bg-ansi-red hover:brightness-110 cursor-pointer"></div>
-            <div className="flex size-3 items-center justify-center rounded-full bg-ansi-yellow hover:brightness-110 cursor-pointer"></div>
-            <div className="flex size-3 items-center justify-center rounded-full bg-ansi-green hover:brightness-110 cursor-pointer"></div>
+            <div className="flex size-3 items-center justify-center rounded-full bg-ansi-red hover:brightness-125 hover:scale-110 cursor-pointer transition-all duration-200 hover:shadow-[0_0_8px_rgba(255,85,85,0.6)]"></div>
+            <div className="flex size-3 items-center justify-center rounded-full bg-ansi-yellow hover:brightness-125 hover:scale-110 cursor-pointer transition-all duration-200 hover:shadow-[0_0_8px_rgba(241,250,140,0.6)]"></div>
+            <div className="flex size-3 items-center justify-center rounded-full bg-ansi-green hover:brightness-125 hover:scale-110 cursor-pointer transition-all duration-200 hover:shadow-[0_0_8px_rgba(80,250,123,0.6)]"></div>
           </div>
-          <Link to="/" className="flex items-center gap-1 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">
-            <span className="material-symbols-outlined text-[16px] text-ansi-cyan">terminal</span>
-            <span className="text-ansi-magenta">SAMBIT-PRADHAN</span>
+          <Link to="/" className="flex items-center gap-1 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors group">
+            <span className="material-symbols-outlined text-[16px] text-ansi-cyan group-hover:animate-pulse">terminal</span>
+            <span className="text-ansi-magenta group-hover:text-glow-magenta transition-all">SAMBIT-PRADHAN</span>
             <span className="text-ansi-gray">@</span>
-            <span className="text-ansi-cyan">PORTFOLIO</span>
+            <span className="text-ansi-cyan group-hover:text-glow-cyan transition-all">PORTFOLIO</span>
             <span className="text-ansi-yellow">:~</span>
           </Link>
         </div>
-        <div className="text-xs text-ansi-green font-bold hidden sm:block">
+        <div className="text-xs text-ansi-green font-bold hidden sm:block animate-float">
           v2.4.0-stable
         </div>
       </div>
 
       {/* Navigation Tabs */}
       <nav className="flex bg-[#0d120d] border-x border-term-border pt-2 px-2 gap-1 overflow-x-auto">
-        {tabs.map((tab) => {
+        {tabs.map((tab, index) => {
           const isActive = activePage === tab.id;
           return (
             <Link
               key={tab.id}
               to={tab.path}
-              className={`relative group cursor-pointer flex items-center gap-2 px-6 py-2 rounded-t-lg transition-all ${
+              className={`relative group cursor-pointer flex items-center gap-2 px-6 py-2 rounded-t-lg transition-all duration-300 opacity-0 animate-fade-in-up ${
                 isActive
                   ? `bg-term-panel border-t-2 z-10 ${tab.color}`
                   : "bg-transparent hover:bg-term-panel/50 border-t-2 border-transparent hover:border-term-border"
               }`}
-              style={{ borderColor: isActive ? undefined : 'transparent' }}
+              style={{ 
+                borderColor: isActive ? undefined : 'transparent',
+                animationDelay: `${index * 100}ms`,
+                animationFillMode: 'forwards'
+              }}
             >
-              <span className={`material-symbols-outlined text-sm ${tab.color}`}>{tab.icon}</span>
-              <span className={`text-sm font-bold tracking-wide ${isActive ? tab.color : 'text-ansi-gray group-hover:text-ansi-white'}`}>{tab.label}</span>
+              <span className={`material-symbols-outlined text-sm ${tab.color} ${isActive ? 'animate-pulse' : 'group-hover:scale-110 transition-transform'}`}>{tab.icon}</span>
+              <span className={`text-sm font-bold tracking-wide transition-all ${isActive ? tab.color : 'text-ansi-gray group-hover:text-ansi-white'}`}>{tab.label}</span>
               {isActive && (
-                <span className="material-symbols-outlined text-xs ml-2 opacity-50 hover:opacity-100">close</span>
+                <span className="material-symbols-outlined text-xs ml-2 opacity-50 hover:opacity-100 hover:rotate-90 transition-all duration-300">close</span>
               )}
+              {/* Hover underline effect */}
+              <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-current transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-4/5'}`}></span>
             </Link>
           );
         })}
 
         {/* New Tab Placeholder */}
-        <div className="flex items-center justify-center px-3 py-2 text-ansi-gray/60 hover:text-ansi-green cursor-pointer">
+        <div className="flex items-center justify-center px-3 py-2 text-ansi-gray/60 hover:text-ansi-green cursor-pointer transition-all hover:scale-110 hover:rotate-90 duration-300">
           <span className="material-symbols-outlined text-sm">add</span>
         </div>
       </nav>

@@ -38,11 +38,11 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <article 
-      className="group relative flex flex-col bg-term-panel border border-term-border rounded-lg overflow-hidden transition-all duration-300 hover:border-ansi-gray/60 hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] cursor-pointer"
+      className="group relative flex flex-col bg-term-panel border border-term-border rounded-lg overflow-hidden terminal-card cursor-pointer hover:border-ansi-cyan/40"
       onClick={onClick}
     >
       {/* Window Title Bar */}
-      <div className="h-8 bg-ansi-gray/5 border-b border-term-border flex items-center justify-between px-3">
+      <div className="h-8 bg-ansi-gray/5 border-b border-term-border flex items-center justify-between px-3 group-hover:bg-ansi-gray/10 transition-colors">
         <div className="flex items-center gap-2">
           <span className="material-symbols-outlined text-sm text-ansi-gray/70">
             {icon}
@@ -67,11 +67,11 @@ const ProjectCard = ({
       {/* Card Content */}
       <div className="p-4 flex flex-col h-full gap-4">
         {/* Image Preview */}
-        <div className="relative w-full h-48 rounded overflow-hidden border border-term-border group-hover:border-ansi-gray/40 transition-colors">
-          <div className="absolute inset-0 bg-gradient-to-t from-term-panel via-transparent to-transparent opacity-80 z-10" />
+        <div className="relative w-full h-48 rounded overflow-hidden border border-term-border group-hover:border-ansi-cyan/40 transition-all duration-500">
+          <div className="absolute inset-0 bg-gradient-to-t from-term-panel via-transparent to-transparent opacity-80 z-10 group-hover:opacity-60 transition-opacity" />
           <img
             alt={imageAlt}
-            className="w-full h-full object-cover filter grayscale contrast-125 sepia hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            className="w-full h-full object-cover filter grayscale contrast-125 sepia group-hover:grayscale-0 group-hover:sepia-0 transition-all duration-700 opacity-60 group-hover:opacity-100 group-hover:scale-105"
             src={imageSrc}
           />
           <div className="absolute bottom-2 left-3 z-20 font-mono text-xs bg-black/80 px-2 py-0.5 border border-ansi-gray/30 rounded text-ansi-cyan">
