@@ -6,10 +6,10 @@ interface TerminalHeaderProps {
 
 const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
   const tabs = [
-    { id: "about", path: "/about", icon: "person", label: "01_ABOUT_ME.sh" },
-    { id: "skills", path: "/skills", icon: "code", label: "02_SKILLS.js" },
-    { id: "projects", path: "/projects", icon: "folder_open", label: "03_PROJECTS" },
-    { id: "contact", path: "/contact", icon: "mail", label: "04_CONTACTS" },
+    { id: "about", path: "/about", icon: "person", label: "01_ABOUT_ME.sh", color: "text-ansi-cyan" },
+    { id: "skills", path: "/skills", icon: "code", label: "02_SKILLS.js", color: "text-ansi-yellow" },
+    { id: "projects", path: "/projects", icon: "folder_open", label: "03_PROJECTS", color: "text-ansi-magenta" },
+    { id: "contact", path: "/contact", icon: "mail", label: "04_CONTACTS", color: "text-ansi-green" },
   ];
 
   return (
@@ -49,7 +49,7 @@ const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
                   : "bg-transparent hover:bg-term-panel/50 border-t-2 border-transparent hover:border-term-border text-ansi-gray hover:text-ansi-white"
               }`}
             >
-              <span className="material-symbols-outlined text-sm">{tab.icon}</span>
+              <span className={`material-symbols-outlined text-sm ${tab.color}`}>{tab.icon}</span>
               <span className="text-sm font-bold tracking-wide">{tab.label}</span>
               {isActive && (
                 <span className="material-symbols-outlined text-xs ml-2 opacity-50 hover:opacity-100">close</span>
