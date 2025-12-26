@@ -110,6 +110,57 @@ const projectsData = [
       repoUrl: "https://github.com/NoobSambit/ARMYBATTLES",
     },
   },
+  {
+    id: "PRJ-DBLDR-001",
+    title: "DOCBUILDER.AI",
+    icon: "description",
+    imageSrc: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
+    imageAlt: "AI Document Builder",
+    pid: "3001",
+    status: "RUNNING",
+    statusColor: "text-ansi-green animate-pulse",
+    techStack: (
+      <>
+        <span className="text-ansi-magenta">&lt;Next.js</span>{" "}
+        <span className="text-ansi-yellow">FastAPI</span>{" "}
+        <span className="text-ansi-cyan">LangChain</span>{" "}
+        <span className="text-ansi-green">Llama</span> /&gt;
+      </>
+    ),
+    description:
+      "Enterprise-grade AI-powered tool for generating professional DOCX and PPTX documents using LLM orchestration and RAG.",
+    version: "v1.0.0",
+    updated: "Ongoing",
+    primaryAction: { label: "Demo", icon: "play_arrow" },
+    demoUrl: "https://docbuilder-pearl.vercel.app",
+    repoUrl: "https://github.com/NoobSambit/docbuilder",
+    modalData: {
+      id: "PRJ-DBLDR-001",
+      name: "AI Document & Presentation Builder v1.0",
+      version: "1.0.0",
+      metadata: {
+        role: "Full Stack Developer",
+        timeline: "Ongoing",
+        status: "Active Development",
+      },
+      stack: ["Next.js", "React", "FastAPI", "Python", "LangChain", "Firebase", "Groq Llama 3.3 70B", "FAISS", "Google CSE", "Vercel", "Railway", "Tailwind CSS"],
+      description: "AI Document & Presentation Builder is an enterprise-grade AI-powered tool for generating professional DOCX and PPTX documents using LLM orchestration and retrieval-augmented generation (RAG). Built with a full API, context-aware refinement, section-level intelligence, and export capabilities, the system supports both structured outline generation and deep content creation for business reports, academic papers, and presentations.",
+      features: [
+        { name: "AI Outline Generation", status: true, details: "Generates professional document structure based on type and topic" },
+        { name: "RAG-Enhanced Content Generation", status: true, details: "Web search + embeddings for factual, context-aware content" },
+        { name: "Context-Aware Refinement", status: true, details: "Improves and expands sections with adjacent context and history" },
+        { name: "Document Export", status: true, details: "Export to DOCX and PPTX with multiple professional themes" },
+        { name: "Full API Backend", status: true, details: "FastAPI backend with JWT auth, LangChain orchestration, and REST endpoints" },
+        { name: "Authentication & Security", status: true, details: "Firebase JWT authentication and secure user access control" },
+        { name: "Drag & Drop Editor", status: true, details: "Rich text editor in frontend with interactive section controls" },
+        { name: "Vector Search Engine (FAISS)", status: true, details: "Embeddings stored and searched for RAG retrieval" },
+        { name: "Deployment Ready", status: true, details: "Configured for Vercel frontend and Railway backend" },
+        { name: "Roadmap Features", status: false, details: "Collaborative editing, custom KB upload, analytics dashboard, PDF export" },
+      ],
+      demoUrl: "https://docbuilder-pearl.vercel.app",
+      repoUrl: "https://github.com/NoobSambit/docbuilder",
+    },
+  },
 ];
 
 const Projects = () => {
