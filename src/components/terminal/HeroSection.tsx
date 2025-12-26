@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const HeroSection = () => {
   const [showCursor, setShowCursor] = useState(true);
@@ -57,11 +58,24 @@ const HeroSection = () => {
 
       {/* Welcome message */}
       <div className="pl-2 sm:pl-4 border-l-2 border-ansi-cyan/30 ml-0 sm:ml-1 py-2">
-        <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 sm:mb-4 text-white opacity-0 animate-fade-in-up stagger-2">
-          Building <span className="text-ansi-cyan text-glow-cyan transition-all duration-300 hover:scale-105 inline-block">Scalable Systems</span>,{" "}
-          <span className="text-ansi-magenta text-glow-magenta transition-all duration-300 hover:scale-105 inline-block">Intelligent Products</span>, and{" "}
-          <span className="text-ansi-yellow text-glow-yellow transition-all duration-300 hover:scale-105 inline-block">Real-World Platforms</span>
-        </h1>
+        {/* Profile Photo + Intro */}
+        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 shrink-0 opacity-0 animate-fade-in-up stagger-1">
+            <div className="absolute inset-0 border-2 border-ansi-cyan rounded-full animate-pulse opacity-50"></div>
+            <div className="absolute inset-1 bg-term-panel rounded-full overflow-hidden border border-term-border">
+              <img src={profilePhoto} alt="Sambit" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 bg-ansi-green rounded-full border-2 border-term-bg"></div>
+          </div>
+          
+          <div className="flex-1">
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 sm:mb-4 text-white opacity-0 animate-fade-in-up stagger-2">
+              Building <span className="text-ansi-cyan text-glow-cyan transition-all duration-300 hover:scale-105 inline-block">Scalable Systems</span>,{" "}
+              <span className="text-ansi-magenta text-glow-magenta transition-all duration-300 hover:scale-105 inline-block">Intelligent Products</span>, and{" "}
+              <span className="text-ansi-yellow text-glow-yellow transition-all duration-300 hover:scale-105 inline-block">Real-World Platforms</span>
+            </h1>
+          </div>
+        </div>
 
         <p className="text-sm sm:text-lg md:text-xl text-ansi-gray mb-3 sm:mb-4 max-w-3xl opacity-0 animate-fade-in-up stagger-3">
           Full Stack Developer focused on backend engineering, AI-powered applications, and performance-driven systems.
