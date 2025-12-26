@@ -9,6 +9,14 @@ interface SkillsExplorerProps {
 const SkillsExplorer = ({ activeFile, onFileClick }: SkillsExplorerProps) => {
   const [srcExpanded, setSrcExpanded] = useState(true);
 
+  const files = [
+    { id: "languages.js", icon: "javascript", color: "text-ansi-yellow" },
+    { id: "frameworks.json", icon: "data_object", color: "text-ansi-magenta" },
+    { id: "skills_meter.tsx", icon: "speed", color: "text-ansi-green" },
+    { id: "certs.log", icon: "verified", color: "text-ansi-cyan" },
+    { id: "tools.sh", icon: "terminal", color: "text-orange-400" },
+  ];
+
   return (
     <aside className="w-full md:w-64 bg-term-bg border-r border-term-border flex flex-col shrink-0 md:h-full h-auto">
       {/* Explorer Header */}
@@ -22,7 +30,7 @@ const SkillsExplorer = ({ activeFile, onFileClick }: SkillsExplorerProps) => {
         {/* Portfolio Root */}
         <div className="flex items-center gap-2 text-ansi-white py-1 px-2 hover:bg-term-panel rounded cursor-pointer">
           <ChevronDown size={18} />
-          <span className="font-bold text-ansi-blue">PORTFOLIO-V1</span>
+          <span className="font-bold text-ansi-cyan">SAMBIT-SKILLS</span>
         </div>
 
         {/* SRC Folder */}
@@ -31,57 +39,28 @@ const SkillsExplorer = ({ activeFile, onFileClick }: SkillsExplorerProps) => {
             className="flex items-center gap-2 text-ansi-gray py-1 px-2 hover:bg-term-panel rounded cursor-pointer"
             onClick={() => setSrcExpanded(!srcExpanded)}
           >
-            {srcExpanded ? <FolderOpen size={18} /> : <Folder size={18} />}
-            <span>src</span>
+            {srcExpanded ? <FolderOpen size={18} className="text-ansi-blue" /> : <Folder size={18} className="text-ansi-blue" />}
+            <span className="text-ansi-blue">src</span>
           </div>
 
           {/* Files inside SRC */}
           {srcExpanded && (
             <div className="pl-6 space-y-1 mt-1">
-              <div
-                className={`flex items-center gap-2 py-1 px-2 rounded cursor-pointer ${
-                  activeFile === "languages.js"
-                    ? "text-ansi-yellow bg-term-panel/50 border-l-2 border-ansi-yellow"
-                    : "text-ansi-gray hover:text-ansi-yellow hover:bg-term-panel"
-                }`}
-                onClick={() => onFileClick("languages.js")}
-              >
-                <span className="material-symbols-outlined text-[16px] text-ansi-yellow">javascript</span>
-                <span>languages.js</span>
-              </div>
-              <div
-                className={`flex items-center gap-2 py-1 px-2 rounded cursor-pointer ${
-                  activeFile === "frameworks.json"
-                    ? "text-ansi-magenta bg-term-panel/50 border-l-2 border-ansi-magenta"
-                    : "text-ansi-gray hover:text-ansi-magenta hover:bg-term-panel"
-                }`}
-                onClick={() => onFileClick("frameworks.json")}
-              >
-                <span className="material-symbols-outlined text-[16px] text-ansi-magenta">data_object</span>
-                <span>frameworks.json</span>
-              </div>
-              <div
-                className={`flex items-center gap-2 py-1 px-2 rounded cursor-pointer ${
-                  activeFile === "certs.log"
-                    ? "text-ansi-cyan bg-term-panel/50 border-l-2 border-ansi-cyan"
-                    : "text-ansi-gray hover:text-ansi-cyan hover:bg-term-panel"
-                }`}
-                onClick={() => onFileClick("certs.log")}
-              >
-                <span className="material-symbols-outlined text-[16px] text-ansi-cyan">description</span>
-                <span>certs.log</span>
-              </div>
-              <div
-                className={`flex items-center gap-2 py-1 px-2 rounded cursor-pointer ${
-                  activeFile === "tools.sh"
-                    ? "text-orange-400 bg-term-panel/50 border-l-2 border-orange-400"
-                    : "text-ansi-gray hover:text-orange-400 hover:bg-term-panel"
-                }`}
-                onClick={() => onFileClick("tools.sh")}
-              >
-                <span className="material-symbols-outlined text-[16px] text-orange-400">terminal</span>
-                <span>tools.sh</span>
-              </div>
+              {files.map((file) => (
+                <div
+                  key={file.id}
+                  className={`flex items-center gap-2 py-1 px-2 rounded cursor-pointer transition-colors ${
+                    activeFile === file.id
+                      ? `${file.color} bg-term-panel/50 border-l-2`
+                      : `text-ansi-gray hover:${file.color} hover:bg-term-panel`
+                  }`}
+                  style={{ borderColor: activeFile === file.id ? 'currentColor' : 'transparent' }}
+                  onClick={() => onFileClick(file.id)}
+                >
+                  <span className={`material-symbols-outlined text-[16px] ${file.color}`}>{file.icon}</span>
+                  <span className={activeFile === file.id ? file.color : 'text-ansi-gray/90 hover:text-ansi-white'}>{file.id}</span>
+                </div>
+              ))}
             </div>
           )}
         </div>
@@ -92,6 +71,14 @@ const SkillsExplorer = ({ activeFile, onFileClick }: SkillsExplorerProps) => {
             <Folder size={18} />
             <span>node_modules</span>
           </div>
+        </div>
+
+        {/* Whoami Easter Egg */}
+        <div className="mt-8 p-3 border border-term-border/50 rounded bg-term-panel/30 mx-2">
+          <p className="text-xs text-ansi-gray mb-1">$ whoami</p>
+          <p className="text-ansi-cyan text-sm font-bold">Sambit Pradhan</p>
+          <p className="text-ansi-white/70 text-xs">Full Stack Developer</p>
+          <p className="text-ansi-gray text-[10px] mt-1">Backend-first • AI-driven • System-oriented</p>
         </div>
       </div>
     </aside>
