@@ -316,6 +316,55 @@ const projectsData = [
       repoUrl: "https://github.com/NoobSambit/KIRANA-CORNER",
     },
   },
+  {
+    id: "PRJ-EMBEDDED-001",
+    title: "ARDUINO_SAFETY.INO",
+    icon: "developer_board",
+    imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
+    imageAlt: "Arduino Embedded Systems",
+    pid: "7001",
+    status: "COMPLETED",
+    statusColor: "text-ansi-cyan",
+    techStack: (
+      <>
+        <span className="text-ansi-magenta">&lt;Arduino</span>{" "}
+        <span className="text-ansi-yellow">C++</span>{" "}
+        <span className="text-ansi-cyan">GSM</span>{" "}
+        <span className="text-ansi-green">GPS</span> /&gt;
+      </>
+    ),
+    description:
+      "Real-world embedded system projects for vehicle safety: alcohol detection with engine lock and crash detection with SMS alerts.",
+    version: "v1.0.0",
+    updated: "Academic",
+    primaryAction: { label: "Docs", icon: "description" },
+    demoUrl: "https://github.com/NoobSambit/Embedded-System-Project#readme",
+    repoUrl: "https://github.com/NoobSambit/Embedded-System-Project",
+    modalData: {
+      id: "PRJ-EMBEDDED-001",
+      name: "Arduino Embedded Safety Systems v1.0",
+      version: "1.0.0",
+      metadata: {
+        role: "Embedded Systems Developer",
+        timeline: "Semester / Academic Project",
+        status: "Completed (Demo/Prototype)",
+      },
+      stack: ["Arduino Uno", "Arduino Nano", "C++ (Arduino IDE)", "MQ-3 Alcohol Sensor", "Relay Module", "ADXL335 Accelerometer", "SIM800L GSM Module", "NEO-6M GPS Module", "LCD Display"],
+      description: "This repository contains two real-world embedded system projects developed with Arduino hardware and sensors to enhance vehicle safety. Project 1 detects driver alcohol levels and automatically locks the engine before start. Project 2 detects crashes using an accelerometer and sends emergency SMS alerts with GPS coordinates.",
+      features: [
+        { name: "Alcohol Detection & Auto-Lock System", status: true, details: "Monitors breath alcohol concentration and locks vehicle ignition when levels exceed a safety threshold" },
+        { name: "Accident Detection & Alert System", status: true, details: "Detects sudden impact via accelerometer and sends GPS location via SMS to emergency contacts" },
+        { name: "Real-Time Alerts", status: true, details: "SMS alerts with live GPS coordinates using SIM800L GSM module" },
+        { name: "Sensor Integration", status: true, details: "Integrates MQ-3 alcohol sensor and ADXL335 accelerometer with MCU input logic" },
+        { name: "User Feedback Display", status: true, details: "Status and warnings shown in real time on LCD" },
+        { name: "Hardware Safety Logic", status: true, details: "Engine lock via relay and audible buzzer alerts for critical events" },
+        { name: "Academic Prototype", status: true, details: "Designed and tested as embedded systems learning projects with real sensor modules" },
+        { name: "Future Enhancements", status: false, details: "Integration with mobile dashboards, cloud telemetry, advanced algorithmic detection" },
+      ],
+      demoUrl: "https://github.com/NoobSambit/Embedded-System-Project#readme",
+      repoUrl: "https://github.com/NoobSambit/Embedded-System-Project",
+    },
+  },
 ];
 
 const Projects = () => {
