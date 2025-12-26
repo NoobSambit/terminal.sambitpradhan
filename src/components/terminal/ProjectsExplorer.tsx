@@ -73,14 +73,14 @@ const ProjectsExplorer = ({ onFileClick }: ProjectsExplorerProps) => {
     return (
       <li
         key={item.name}
-        className="flex items-center gap-2 text-ansi-gray/60 hover:text-ansi-white cursor-pointer hover:bg-ansi-gray/10 rounded px-1 -ml-1 transition-colors"
+        className="flex items-center gap-2 text-ansi-gray hover:text-ansi-white cursor-pointer hover:bg-ansi-gray/10 rounded px-1 -ml-1 transition-colors"
         style={{ paddingLeft: `${paddingLeft + 20}px` }}
         onClick={() => item.projectId && onFileClick?.(item.projectId)}
       >
         <span className={`material-symbols-outlined text-sm ${item.color}`}>
           {item.icon}
         </span>
-        <span>{item.name}</span>
+        <span className="text-ansi-gray/90 hover:text-ansi-cyan transition-colors">{item.name}</span>
       </li>
     );
   };
@@ -88,10 +88,10 @@ const ProjectsExplorer = ({ onFileClick }: ProjectsExplorerProps) => {
   return (
     <div className="border border-term-border bg-term-panel/50 p-4 rounded-lg">
       <div className="flex justify-between items-center border-b border-term-border pb-2 mb-3">
-        <span className="text-xs font-bold uppercase tracking-wider text-ansi-gray/60">
+        <span className="text-xs font-bold uppercase tracking-wider text-ansi-gray">
           EXPLORER
         </span>
-        <span className="material-symbols-outlined text-xs text-ansi-gray/60">
+        <span className="material-symbols-outlined text-xs text-ansi-gray">
           folder_open
         </span>
       </div>
