@@ -23,13 +23,13 @@ const About = () => {
           <div className="lg:hidden border-b border-term-border">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 bg-[#0d120d] hover:bg-term-panel/50 transition-colors"
+              className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-ansi-cyan/10 via-term-panel to-ansi-cyan/10 hover:from-ansi-cyan/20 hover:to-ansi-cyan/20 transition-all duration-300 border-b border-ansi-cyan/30 shadow-[0_0_15px_rgba(0,255,255,0.15)]"
             >
-              <span className="flex items-center gap-2 text-sm font-bold text-ansi-cyan">
+              <span className="flex items-center gap-2 text-sm font-bold text-ansi-cyan animate-pulse">
                 <span className="material-symbols-outlined text-lg">person</span>
-                USER_PROFILE
+                TAP TO VIEW PROFILE
               </span>
-              <span className={`material-symbols-outlined text-ansi-gray transition-transform duration-300 ${sidebarOpen ? 'rotate-180' : ''}`}>
+              <span className={`material-symbols-outlined text-ansi-cyan transition-transform duration-300 text-xl animate-bounce ${sidebarOpen ? 'rotate-180 animate-none' : ''}`}>
                 expand_more
               </span>
             </button>

@@ -22,13 +22,13 @@ const Contact = () => {
           <div className="lg:hidden border-b border-term-border">
             <button
               onClick={() => setCodeViewerOpen(!codeViewerOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 bg-term-panel/80 hover:bg-term-panel transition-colors"
+              className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-ansi-cyan/10 via-term-panel to-ansi-cyan/10 hover:from-ansi-cyan/20 hover:to-ansi-cyan/20 transition-all duration-300 border-b border-ansi-cyan/30 shadow-[0_0_15px_rgba(0,255,255,0.15)]"
             >
-              <span className="flex items-center gap-2 text-sm font-bold text-ansi-cyan">
+              <span className="flex items-center gap-2 text-sm font-bold text-ansi-cyan animate-pulse">
                 <span className="material-symbols-outlined text-lg">code</span>
-                user_config.json
+                TAP TO VIEW CONFIG
               </span>
-              <span className={`material-symbols-outlined text-ansi-gray transition-transform duration-300 ${codeViewerOpen ? 'rotate-180' : ''}`}>
+              <span className={`material-symbols-outlined text-ansi-cyan transition-transform duration-300 text-xl animate-bounce ${codeViewerOpen ? 'rotate-180 animate-none' : ''}`}>
                 expand_more
               </span>
             </button>

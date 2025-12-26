@@ -27,13 +27,13 @@ const Skills = () => {
           <div className="md:hidden border-b border-term-border">
             <button
               onClick={() => setExplorerOpen(!explorerOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 bg-term-bg hover:bg-term-panel/50 transition-colors"
+              className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-ansi-yellow/10 via-term-panel to-ansi-yellow/10 hover:from-ansi-yellow/20 hover:to-ansi-yellow/20 transition-all duration-300 border-b border-ansi-yellow/30 shadow-[0_0_15px_rgba(255,215,0,0.15)]"
             >
-              <span className="flex items-center gap-2 text-sm font-bold text-ansi-yellow">
+              <span className="flex items-center gap-2 text-sm font-bold text-ansi-yellow animate-pulse">
                 <span className="material-symbols-outlined text-lg">folder_open</span>
-                SKILLS_EXPLORER
+                TAP TO EXPLORE SKILLS
               </span>
-              <span className={`material-symbols-outlined text-ansi-gray transition-transform duration-300 ${explorerOpen ? 'rotate-180' : ''}`}>
+              <span className={`material-symbols-outlined text-ansi-yellow transition-transform duration-300 text-xl animate-bounce ${explorerOpen ? 'rotate-180 animate-none' : ''}`}>
                 expand_more
               </span>
             </button>
