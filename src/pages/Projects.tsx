@@ -365,6 +365,59 @@ const projectsData = [
       repoUrl: "https://github.com/NoobSambit/Embedded-System-Project",
     },
   },
+  {
+    id: "PRJ-FANGATE-001",
+    title: "FANGATE.APP",
+    icon: "music_note",
+    imageSrc: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+    imageAlt: "BTS Fan Verification App",
+    pid: "8001",
+    status: "ACTIVE",
+    statusColor: "text-ansi-green",
+    techStack: (
+      <>
+        <span className="text-ansi-blue">&lt;Next.js</span>{" "}
+        <span className="text-ansi-cyan">Prisma</span>{" "}
+        <span className="text-ansi-magenta">PostgreSQL</span>{" "}
+        <span className="text-ansi-yellow">NextAuth</span> /&gt;
+      </>
+    ),
+    description:
+      "Interactive BTS fan verification via Last.fm analytics and real-time multiplayer quiz battles with downloadable scorecards.",
+    version: "v1.0.0",
+    updated: "2024",
+    primaryAction: { label: "Demo", icon: "play_arrow" },
+    demoUrl: "https://fangate.netlify.app",
+    repoUrl: "https://github.com/NoobSambit/FANGATE",
+    modalData: {
+      id: "PRJ-FANGATE-001",
+      name: "FANGATE — BTS Fan Verification & Quiz Battle v1.0",
+      version: "1.0.0",
+      metadata: {
+        role: "Full Stack Developer",
+        timeline: "Ongoing",
+        status: "Active Development",
+      },
+      stack: ["Next.js 14 (App Router)", "React 18", "TypeScript", "Tailwind CSS", "Prisma ORM", "PostgreSQL", "NextAuth.js", "html2canvas", "Cloudflare Pages", "Last.fm API", "Twitter Intent API"],
+      description: "FANGATE is an interactive web application built for BTS ARMY fans to prove their fandom via listening analytics and trivia challenges before accessing ticketing pages. It combines Last.fm listening history analysis with a multiplayer real-time quiz battle, downloadable scorecards, social sharing, and a polished BTS-themed UI.",
+      features: [
+        { name: "Last.fm Fan Verification", status: true, details: "Username-based Last.fm listening history analysis with fan score calculation" },
+        { name: "Scoring Algorithm", status: true, details: "Combined scoring system with 40% Last.fm history + 60% quiz performance" },
+        { name: "Single-Player Quiz", status: true, details: "10 BTS trivia questions with a 5-minute timer and progress tracking" },
+        { name: "Multiplayer Quiz Battles", status: true, details: "Real-time battle sessions for up to 5 players with synchronized start and live leaderboard" },
+        { name: "Battle Lobby & Matchmaking", status: true, details: "Create/join battles with unique 6-char codes and manage participants" },
+        { name: "Downloadable Scorecards", status: true, details: "Client-side HTML2Canvas exports of result scorecards as high-quality images" },
+        { name: "Twitter Social Sharing", status: true, details: "One-click sharing with prefilled tweets for verification and battle results" },
+        { name: "Armstrong-Themed UI Design", status: true, details: "Dark UI with gradients, animations, and confetti for winning moments" },
+        { name: "Authentication Support", status: true, details: "NextAuth.js with optional Spotify integration for alternative verification" },
+        { name: "Real-Time Multiplayer Logic", status: true, details: "Client-driven polls and graceful battle state transitions" },
+        { name: "Backend & Database", status: true, details: "Next.js API Routes + Prisma with PostgreSQL for persistence and quiz storage" },
+        { name: "Future Enhancements", status: false, details: "Planned features include deeper Spotify mode, live sockets, and fan tournaments" },
+      ],
+      demoUrl: "https://fangate.netlify.app",
+      repoUrl: "https://github.com/NoobSambit/FANGATE",
+    },
+  },
 ];
 
 const Projects = () => {
