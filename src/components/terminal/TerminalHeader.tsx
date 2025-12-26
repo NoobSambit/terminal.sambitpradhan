@@ -22,9 +22,12 @@ const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
             <div className="flex size-3 items-center justify-center rounded-full bg-ansi-yellow hover:brightness-110 cursor-pointer"></div>
             <div className="flex size-3 items-center justify-center rounded-full bg-ansi-green hover:brightness-110 cursor-pointer"></div>
           </div>
-          <Link to="/" className="flex items-center gap-2 text-xs text-ansi-gray font-bold tracking-widest uppercase hover:text-ansi-white transition-colors">
-            <span className="material-symbols-outlined text-[16px]">terminal</span>
-            user@portfolio:~
+          <Link to="/" className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">
+            <span className="material-symbols-outlined text-[16px] text-ansi-cyan">terminal</span>
+            <span className="text-ansi-magenta">SAMBIT</span>
+            <span className="text-ansi-gray">@</span>
+            <span className="text-ansi-cyan">PORTFOLIO</span>
+            <span className="text-ansi-yellow">:~</span>
           </Link>
         </div>
         <div className="text-xs text-ansi-green font-bold hidden sm:block">
