@@ -37,12 +37,13 @@ const TerminalHeader = ({ activePage = "home" }: TerminalHeaderProps) => {
         
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden flex items-center justify-center p-1.5 text-ansi-gray hover:text-ansi-white transition-colors"
+          className="md:hidden flex items-center justify-center p-2 rounded-lg border border-ansi-cyan/50 bg-ansi-cyan/10 text-ansi-cyan hover:bg-ansi-cyan/20 hover:border-ansi-cyan transition-all animate-pulse hover:animate-none shadow-[0_0_10px_rgba(139,233,253,0.3)] hover:shadow-[0_0_15px_rgba(139,233,253,0.5)]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <span className="material-symbols-outlined text-xl">
             {mobileMenuOpen ? 'close' : 'menu'}
           </span>
+          {!mobileMenuOpen && <span className="text-[10px] font-bold ml-1 uppercase tracking-wider">Menu</span>}
         </button>
         
         <div className="text-[10px] sm:text-xs text-ansi-green font-bold hidden md:block animate-float">
