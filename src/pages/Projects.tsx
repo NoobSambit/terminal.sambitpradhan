@@ -58,6 +58,58 @@ const projectsData = [
       repoUrl: "https://github.com/NoobSambit/ARMYVERSE2",
     },
   },
+  {
+    id: "PRJ-ARMY-002",
+    title: "ARMYBATTLES.EXE",
+    icon: "sports_esports",
+    imageSrc: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop",
+    imageAlt: "ARMYBATTLES Platform",
+    pid: "2002",
+    status: "RUNNING",
+    statusColor: "text-ansi-green animate-pulse",
+    techStack: (
+      <>
+        <span className="text-ansi-magenta">&lt;Next.js</span>{" "}
+        <span className="text-ansi-yellow">MongoDB</span>{" "}
+        <span className="text-ansi-cyan">Last.fm</span>{" "}
+        <span className="text-ansi-green">Spotify</span> /&gt;
+      </>
+    ),
+    description:
+      "Production-grade real-time music competing platform. Users compete via Spotify playlists and earn leaderboard rankings using Last.fm scrobbles.",
+    version: "v2.0.0",
+    updated: "5+ Months",
+    primaryAction: { label: "Demo", icon: "play_arrow" },
+    demoUrl: "https://armybattles.netlify.app",
+    repoUrl: "https://github.com/NoobSambit/ARMYBATTLES",
+    modalData: {
+      id: "PRJ-ARMY-002",
+      name: "ARMYBATTLES v2.0",
+      version: "2.0.0",
+      metadata: {
+        role: "Full Stack Developer",
+        timeline: "5+ Months",
+        status: "Production Ready",
+      },
+      stack: ["Next.js", "React", "Tailwind CSS", "Node.js (API Routes)", "MongoDB", "Mongoose", "Last.fm API", "Spotify Web API", "Recharts", "Netlify Serverless"],
+      description: "ARMYBATTLES is a production-grade real-time music competing platform built for the BTS/ARMY community. Users compete by listening to Spotify playlists and earn leaderboard rankings using Last.fm scrobbles. The platform includes battle lifecycle management, team mechanics, advanced host controls, cheat detection, analytics dashboards, and scalable serverless deployment.",
+      features: [
+        { name: "User Authentication", status: true, details: "Username-only login with Last.fm integration and secure sessions" },
+        { name: "Real-time Leaderboards", status: true, details: "Live polling every 2 minutes with normalized track matching" },
+        { name: "Battle Lifecycle Management", status: true, details: "Automatic transitions between upcoming → active → ended states" },
+        { name: "Team Mode", status: true, details: "Create, invite, join, and track teams with aggregated scoring" },
+        { name: "Host Controls", status: true, details: "Kick participants, extend battles, manual end, activity logs" },
+        { name: "Cheat Detection & Security", status: true, details: "Rate limiting, anomaly detection, audit trails, input validation" },
+        { name: "Battle Analytics Dashboard", status: true, details: "Real-time participation metrics and detailed statistics" },
+        { name: "Responsive UI with BTS Theme", status: true, details: "Dark, gradient-accented layout optimized for all screen sizes" },
+        { name: "Serverless Deployment Optimized", status: true, details: "Netlify-ready with GitHub Actions for automated cron verification" },
+        { name: "Scrobble Verification System", status: true, details: "Cron-based Last.fm scrobble fetching and playlist matching logic" },
+        { name: "Future Enhancements Planned", status: false, details: "Team chat, multi-battle stats, avatars & battle templates" },
+      ],
+      demoUrl: "https://armybattles.netlify.app",
+      repoUrl: "https://github.com/NoobSambit/ARMYBATTLES",
+    },
+  },
 ];
 
 const Projects = () => {
