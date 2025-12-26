@@ -5,10 +5,10 @@ const AboutSidebar = () => {
     <aside className="w-full lg:w-72 bg-[#0d120d] border-b lg:border-b-0 lg:border-r border-term-border p-3 sm:p-4 flex flex-col gap-4 sm:gap-5 shrink-0 overflow-y-auto">
       {/* Avatar / User Profile */}
       <div className="flex flex-row lg:flex-col items-center gap-4 lg:gap-0 lg:pt-4 pb-4 lg:pb-6 border-b border-dashed border-term-border">
-        <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 lg:mb-4 shrink-0">
+        <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 lg:mb-4 shrink-0">
           <div className="absolute inset-0 border-2 border-ansi-green rounded-full animate-pulse opacity-50"></div>
           <div className="absolute inset-1 bg-term-panel rounded-full overflow-hidden flex items-center justify-center border border-term-border">
-            <img src={profilePhoto} alt="Sambit" className="w-full h-full object-cover" />
+            <img src={profilePhoto} alt="Sambit" className="w-full h-full object-cover object-top scale-125" />
           </div>
           <div className="absolute bottom-0 right-0 w-3 h-3 lg:w-4 lg:h-4 bg-ansi-green rounded-full border-2 border-term-bg"></div>
         </div>
