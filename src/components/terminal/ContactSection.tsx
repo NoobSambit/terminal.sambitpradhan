@@ -23,53 +23,59 @@ const ContactSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
         {/* Email */}
-        <a
-          href="mailto:sambitpradhan.dev2004@gmail.com"
-          className="group relative block p-3 sm:p-4 border border-term-border bg-term-panel hover:bg-term-bg transition-colors overflow-hidden rounded-lg"
-        >
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-ansi-red group-hover:w-full transition-all duration-300 opacity-10 group-hover:opacity-20"></div>
+        <div className="group relative block p-3 sm:p-4 border border-term-border bg-term-panel transition-colors overflow-hidden rounded-lg">
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-ansi-red"></div>
           <div className="relative flex items-center gap-2 sm:gap-4 z-10">
             <span className="material-symbols-outlined text-ansi-red text-lg sm:text-2xl">mail</span>
             <div className="min-w-0">
               <div className="text-[9px] sm:text-xs text-ansi-gray font-bold mb-0.5 sm:mb-1">EMAIL</div>
-              <div className="text-ansi-white/90 font-mono text-[10px] sm:text-sm truncate">sambitpradhan.dev2004@gmail.com</div>
+              <a
+                href="mailto:sambitpradhan.dev2004@gmail.com"
+                className="text-ansi-white/90 font-mono text-[10px] sm:text-sm truncate block hover:underline hover:text-ansi-red transition-colors cursor-pointer"
+              >
+                sambitpradhan.dev2004@gmail.com
+              </a>
             </div>
           </div>
-        </a>
+        </div>
 
         {/* GitHub */}
-        <a
-          href="https://github.com/NoobSambit"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative block p-3 sm:p-4 border border-term-border bg-term-panel hover:bg-term-bg transition-colors overflow-hidden rounded-lg"
-        >
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-white group-hover:w-full transition-all duration-300 opacity-10 group-hover:opacity-20"></div>
+        <div className="group relative block p-3 sm:p-4 border border-term-border bg-term-panel transition-colors overflow-hidden rounded-lg">
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-white"></div>
           <div className="relative flex items-center gap-2 sm:gap-4 z-10">
             <span className="material-symbols-outlined text-white text-lg sm:text-2xl">code</span>
             <div>
               <div className="text-[9px] sm:text-xs text-ansi-gray font-bold mb-0.5 sm:mb-1">GITHUB</div>
-              <div className="text-ansi-white/90 font-mono text-[10px] sm:text-sm">@NoobSambit</div>
+              <a
+                href="https://github.com/NoobSambit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ansi-white/90 font-mono text-[10px] sm:text-sm hover:underline hover:text-white transition-colors cursor-pointer"
+              >
+                @NoobSambit
+              </a>
             </div>
           </div>
-        </a>
+        </div>
 
         {/* LinkedIn */}
-        <a
-          href="https://linkedin.com/in/sambit-pradhan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative block p-3 sm:p-4 border border-term-border bg-term-panel hover:bg-term-bg transition-colors overflow-hidden rounded-lg"
-        >
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-ansi-blue group-hover:w-full transition-all duration-300 opacity-10 group-hover:opacity-20"></div>
+        <div className="group relative block p-3 sm:p-4 border border-term-border bg-term-panel transition-colors overflow-hidden rounded-lg">
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-ansi-blue"></div>
           <div className="relative flex items-center gap-2 sm:gap-4 z-10">
             <span className="material-symbols-outlined text-ansi-blue text-lg sm:text-2xl">work</span>
             <div>
               <div className="text-[9px] sm:text-xs text-ansi-gray font-bold mb-0.5 sm:mb-1">LINKEDIN</div>
-              <div className="text-ansi-white/90 font-mono text-[10px] sm:text-sm">/in/sambit-pradhan</div>
+              <a
+                href="https://www.linkedin.com/in/sambit-pradhan-dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ansi-white/90 font-mono text-[10px] sm:text-sm hover:underline hover:text-ansi-blue transition-colors cursor-pointer"
+              >
+                /in/sambit-pradhan-dev
+              </a>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </section>
   );

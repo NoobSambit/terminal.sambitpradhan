@@ -5,6 +5,14 @@ import SystemMonitor from "@/components/terminal/SystemMonitor";
 import ProjectCard from "@/components/terminal/ProjectCard";
 import StatusBar from "@/components/terminal/StatusBar";
 import ProjectDetailsModal, { ProjectData } from "@/components/terminal/ProjectDetailsModal";
+import armyverseImg from "@/assets/armyverse.png";
+import armybattlesImg from "@/assets/ armybattles poster.png";
+import docbuilderImg from "@/assets/docbuilder.png";
+import careerAiImg from "@/assets/aicareerassistant.png";
+import daansetuImg from "@/assets/daansetu.png";
+import kiranaCornerImg from "@/assets/kiranacorner.png";
+import arduinoImg from "@/assets/arduino.png";
+import fangateImg from "@/assets/fangate.png";
 
 // Project data
 const projectsData = [
@@ -12,7 +20,7 @@ const projectsData = [
     id: "PRJ-ARMY-001",
     title: "ARMYVERSE.JSX",
     icon: "music_note",
-    imageSrc: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+    imageSrc: armyverseImg,
     imageAlt: "ARMYVERSE Platform",
     pid: "2001",
     status: "RUNNING",
@@ -62,7 +70,7 @@ const projectsData = [
     id: "PRJ-ARMY-002",
     title: "ARMYBATTLES.EXE",
     icon: "sports_esports",
-    imageSrc: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop",
+    imageSrc: armybattlesImg,
     imageAlt: "ARMYBATTLES Platform",
     pid: "2002",
     status: "RUNNING",
@@ -114,7 +122,7 @@ const projectsData = [
     id: "PRJ-DBLDR-001",
     title: "DOCBUILDER.AI",
     icon: "description",
-    imageSrc: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
+    imageSrc: docbuilderImg,
     imageAlt: "AI Document Builder",
     pid: "3001",
     status: "RUNNING",
@@ -165,7 +173,7 @@ const projectsData = [
     id: "PRJ-CAREER-001",
     title: "CAREER_AI.TSX",
     icon: "work",
-    imageSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    imageSrc: careerAiImg,
     imageAlt: "AI Career Assistant",
     pid: "4001",
     status: "RUNNING",
@@ -215,7 +223,7 @@ const projectsData = [
     id: "PRJ-DAANSETU-001",
     title: "DAANSETU.APP",
     icon: "volunteer_activism",
-    imageSrc: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&h=300&fit=crop",
+    imageSrc: daansetuImg,
     imageAlt: "DaanSetu Platform",
     pid: "5001",
     status: "RUNNING",
@@ -233,7 +241,7 @@ const projectsData = [
     version: "v1.0.0",
     updated: "Ongoing",
     primaryAction: { label: "Demo", icon: "play_arrow" },
-    demoUrl: "https://daansetu.vercel.app",
+    demoUrl: "#",
     repoUrl: "https://github.com/NoobSambit/DaanSetu",
     modalData: {
       id: "PRJ-DAANSETU-001",
@@ -260,7 +268,7 @@ const projectsData = [
         { name: "Rate Limiting & Error Handling", status: true, details: "API protection with rate limiting and graceful error boundaries" },
         { name: "Roadmap Planned Features", status: false, details: "Extended analytics, deeper AI personalization, enhanced social features" },
       ],
-      demoUrl: "https://daansetu.vercel.app",
+      demoUrl: "#",
       repoUrl: "https://github.com/NoobSambit/DaanSetu",
     },
   },
@@ -268,7 +276,7 @@ const projectsData = [
     id: "PRJ-KIRANA-001",
     title: "KIRANA_CORNER.TSX",
     icon: "storefront",
-    imageSrc: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=300&fit=crop",
+    imageSrc: kiranaCornerImg,
     imageAlt: "Kirana Corner Platform",
     pid: "6001",
     status: "RUNNING",
@@ -320,7 +328,7 @@ const projectsData = [
     id: "PRJ-EMBEDDED-001",
     title: "ARDUINO_SAFETY.INO",
     icon: "developer_board",
-    imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
+    imageSrc: arduinoImg,
     imageAlt: "Arduino Embedded Systems",
     pid: "7001",
     status: "COMPLETED",
@@ -369,7 +377,7 @@ const projectsData = [
     id: "PRJ-FANGATE-001",
     title: "FANGATE.APP",
     icon: "music_note",
-    imageSrc: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+    imageSrc: fangateImg,
     imageAlt: "BTS Fan Verification App",
     pid: "8001",
     status: "ACTIVE",

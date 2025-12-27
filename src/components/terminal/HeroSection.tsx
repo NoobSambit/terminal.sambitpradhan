@@ -80,7 +80,7 @@ const HeroSection = () => {
               View Projects
             </Button>
           </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+          <a href="https://drive.google.com/file/d/15_lK7kYFqFkBX0Ck1CAm50LGYXEsNNf5/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
             <Button variant="outline" className="w-full sm:w-auto border-ansi-green text-ansi-green hover:bg-ansi-green hover:text-black font-bold px-4 sm:px-6 py-2.5 sm:py-2 btn-glow transition-all hover:shadow-[0_0_30px_rgba(80,250,123,0.4)] hover:scale-105 text-sm sm:text-base">
               <span className="material-symbols-outlined text-[16px] sm:text-[18px] mr-2">download</span>
               Download Resume

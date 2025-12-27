@@ -47,11 +47,11 @@
     --ansi-red: 0 100% 67%;
     --ansi-green: 135 94% 65%;
     --ansi-yellow: 65 92% 76%;
-    --ansi-blue: 191 97% 77%;
+    --ansi-blue: 210 100% 70%;
     --ansi-magenta: 326 100% 74%;
     --ansi-cyan: 191 97% 77%;
     --ansi-white: 60 30% 96%;
-    --ansi-gray: 232 30% 53%;
+    --ansi-gray: 220 20% 65%;
   }
 
   .dark {
